@@ -34,7 +34,7 @@ class Bee: SKSpriteNode, GameSprite {
     }
     
     func onTap() {
-        
+
     }
 }
 

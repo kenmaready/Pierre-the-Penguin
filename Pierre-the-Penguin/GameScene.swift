@@ -6,19 +6,30 @@
 //
 
 import SpriteKit
-import CoreMotion
 import GameplayKit
 
 class GameScene: SKScene {
     private let cam = SKCameraNode()
+    private var bg = SKSpriteNode()
+    private var bg2 = SKSpriteNode()
     private let ground = Ground()
     private let player = Player()
-    private let motionManager = CMMotionManager()
+    
+    var screenCenterY: CGFloat = 0
+    
+    let initialPlayerPosition = CGPoint(x: 150, y:250)
+    var playerProgress = CGFloat()
+    
+    let initialBackgroundPosition = CGPoint(x: 250, y: 250)
+    let currentBackgroundPosition = CGPoint()
     
     override func didMove(to view: SKView) {
         self.anchorPoint = .zero // lower left corner
         self.backgroundColor = UIColor(red: 0.4, green: 0.6, blue: 0.95, alpha: 1.0)
+        self.physicsWorld.gravity = CGVector(dx: 0, dy: -5)
         
+        
+        screenCenterY = self.size.height / 2
         self.camera = cam
         self.addBackground()
         self.addGround()
@@ -44,56 +55,65 @@ class GameScene: SKScene {
             }
         }
         
-        self.motionManager.startAccelerometerUpdates()
     }
         
     override func update(_ currentTime: TimeInterval) {
         player.update()
-        
-        if let accelData = self.motionManager.accelerometerData {
-            var forceAmount: CGFloat
-            var movement = CGVector()
-            
-            switch UIApplication.shared.windows.first?.windowScene?.interfaceOrientation {
-            case .landscapeLeft:
-                forceAmount = 8000
-            case .landscapeRight:
-                forceAmount = -8000
-            default:
-                forceAmount = 0
-            }
-            
-            if accelData.acceleration.y > 0.15 {
-                movement.dx = forceAmount
-            } else if accelData.acceleration.y < -0.15 {
-                movement.dx = -forceAmount
-            }
-            
-            player.physicsBody?.applyForce(movement)
-        } else {
-            let fakeAccelData = CGFloat.random(in: -0.50...0.50)
-            var forceAmount: CGFloat = 16000
-            var movement = CGVector()
-            
-            if fakeAccelData > 0.15 {
-                movement.dx = forceAmount
-            } else if fakeAccelData < -0.15 {
-                movement.dx = -forceAmount
-            }
-            
-            player.physicsBody?.applyForce(movement)
-        }
+        bg.position.x = initialBackgroundPosition.x + (playerProgress * 0.05)
+        bg2.position.x = initialBackgroundPosition.x + bg2.size.width + (playerProgress * 0.05)
     }
     
     override func didSimulatePhysics() {
-        self.camera!.position = player.position
+        playerProgress = player.position.x - initialPlayerPosition.x
+        
+        // keep camera locked at midscreen by default:
+        var cameraYPos = screenCenterY
+        cam.yScale = 1
+        cam.xScale = 1
+        
+        // if player higher than half screen, follow player up:
+        if player.position.y > screenCenterY {
+            cameraYPos = player.position.y
+            let percentageOfMaxHeight = (player.position.y - screenCenterY) / (player.maxHeight - screenCenterY)
+            let newScale = 1 + percentageOfMaxHeight
+            cam.yScale = newScale
+            cam.xScale = newScale
+        }
+        
+        self.camera!.position = CGPoint(x: player.position.x, y: cameraYPos)
+        ground.checkForReposition(playerProgress: playerProgress)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in (touches) {
+            let location = touch.location(in: self)
+            let nodeTouched = atPoint(location)
+            if let gameSprite = nodeTouched as? GameSprite {
+                gameSprite.onTap()
+            }
+        }
+        
+        player.startFlapping()
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        player.stopFlapping()
+    }
+    
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        player.stopFlapping()
     }
     
     func addBackground() {
-        let bg = SKSpriteNode(imageNamed: "background-menu")
-        bg.position = CGPoint(x: 250, y:250)
+        bg = SKSpriteNode(imageNamed: "background-menu")
+        bg.position = initialBackgroundPosition
         bg.zPosition = -1.0
         self.addChild(bg)
+        
+        bg2 = SKSpriteNode(imageNamed: "background-menu")
+        bg2.position = CGPoint(x: initialBackgroundPosition.x + bg2.size.width, y: initialBackgroundPosition.y)
+        bg2.zPosition = -1.0
+        self.addChild(bg2)
     }
     
     func addGround() {
@@ -104,7 +124,7 @@ class GameScene: SKScene {
     }
     
     func addPlayer() {
-        player.position = CGPoint(x: 150, y: 250)
+        player.position = initialPlayerPosition
         self.addChild(player)
     }
 }

@@ -12,11 +12,14 @@ class Player: SKSpriteNode, GameSprite {
     var initialSize = CGSize(width: 64, height: 64)
     var flyAnimation = SKAction()
     var soarAnimation = SKAction()
+    var flapping = false
+    let maxFlappingForce: CGFloat = 32000
+    let maxHeight: CGFloat = 1000
     
     init() {
         super.init(texture: nil, color: .clear, size: initialSize)
         createAnimations()
-        self.run(flyAnimation, withKey: "flapAnimation")
+        self.run(soarAnimation, withKey: "soarAnimation")
         
         let bodyTexture = textureAtlas.textureNamed("pierre-flying-3")
         self.physicsBody = SKPhysicsBody(texture: bodyTexture, size: self.size)
@@ -56,11 +59,37 @@ class Player: SKSpriteNode, GameSprite {
     }
     
     func onTap() {
-    
+        self.physicsBody?.applyForce(CGVector(dx: 20.0, dy: -250.0))
     }
     
     func update() {
+        if self.flapping {
+            var forceToApply = maxFlappingForce
+            
+            if position.y > 600 {
+                let percentageOfMaxHeight = position.y / maxHeight
+                let flappingForceDampening = percentageOfMaxHeight * maxFlappingForce
+                forceToApply -= flappingForceDampening
+            }
+            
+            self.physicsBody?.applyForce(CGVector(dx: 4000, dy: forceToApply))
+        }
         
+        if self.physicsBody!.velocity.dy > 300 {
+            self.physicsBody!.velocity.dy = 300
+        }
+    }
+    
+    func startFlapping() {
+        self.removeAction(forKey: "soarAnimation")
+        self.run(flyAnimation, withKey: "flapAnimation")
+        self.flapping = true
+    }
+    
+    func stopFlapping() {
+        self.removeAction(forKey: "flapAnimation")
+        self.run(soarAnimation, withKey: "soarAnimation")
+        self.flapping = false
     }
     
 }
