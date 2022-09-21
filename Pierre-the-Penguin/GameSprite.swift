@@ -10,6 +10,6 @@ import SpriteKit
 
 protocol GameSprite {
     var textureAtlas: SKTextureAtlas { get set }
-    var initialize: CGSize { get set }
+    var initialSize: CGSize { get set }
     func onTap()
 }

@@ -16,6 +16,8 @@
 		9B07E53D28D75EBB00C90C61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B07E53C28D75EBB00C90C61 /* Assets.xcassets */; };
 		9B07E54028D75EBB00C90C61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B07E53E28D75EBB00C90C61 /* LaunchScreen.storyboard */; };
 		9B07E54828DB346700C90C61 /* GameSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B07E54728DB346700C90C61 /* GameSprite.swift */; };
+		9B07E54A28DB355D00C90C61 /* Bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B07E54928DB355D00C90C61 /* Bee.swift */; };
+		9B07E54C28DB42BB00C90C61 /* Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B07E54B28DB42BB00C90C61 /* Ground.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		9B07E53C28D75EBB00C90C61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B07E53F28D75EBB00C90C61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B07E54728DB346700C90C61 /* GameSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSprite.swift; sourceTree = "<group>"; };
+		9B07E54928DB355D00C90C61 /* Bee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bee.swift; sourceTree = "<group>"; };
+		9B07E54B28DB42BB00C90C61 /* Ground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,8 @@
 				9B07E53C28D75EBB00C90C61 /* Assets.xcassets */,
 				9B07E53E28D75EBB00C90C61 /* LaunchScreen.storyboard */,
 				9B07E54728DB346700C90C61 /* GameSprite.swift */,
+				9B07E54928DB355D00C90C61 /* Bee.swift */,
+				9B07E54B28DB42BB00C90C61 /* Ground.swift */,
 			);
 			path = "Pierre-the-Penguin";
 			sourceTree = "<group>";
@@ -147,6 +153,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B07E54C28DB42BB00C90C61 /* Ground.swift in Sources */,
+				9B07E54A28DB355D00C90C61 /* Bee.swift in Sources */,
 				9B07E54828DB346700C90C61 /* GameSprite.swift in Sources */,
 				9B07E53628D75EB800C90C61 /* GameScene.swift in Sources */,
 				9B07E53828D75EB800C90C61 /* GameViewController.swift in Sources */,
