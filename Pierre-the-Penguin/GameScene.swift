@@ -9,12 +9,9 @@ import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene {
-    
-    private var label : SKLabelNode?
-    private var spinnyNode : SKShapeNode?
     private let cam = SKCameraNode()
     private let ground = Ground()
-    private let bee = Bee()
+    private let player = Player()
     
     override func didMove(to view: SKView) {
         self.anchorPoint = .zero // lower left corner
@@ -23,7 +20,7 @@ class GameScene: SKScene {
         self.camera = cam
         self.addBackground()
         self.addGround()
-        self.addTheFlyingBee()
+        self.addPlayer()
     
         // add other bees with new Bee() class
         for x in 0...2 {
@@ -48,7 +45,7 @@ class GameScene: SKScene {
     }
     
     override func didSimulatePhysics() {
-        self.camera!.position = bee.position
+        self.camera!.position = player.position
     }
     
     func addBackground() {
@@ -65,21 +62,8 @@ class GameScene: SKScene {
         self.addChild(ground)
     }
     
-    func addTheFlyingBee() {
-        bee.position = CGPoint(x: 250, y: 250)
-        self.addChild(bee)
-        
-        let pathLeft = SKAction.moveBy(x: -200, y: -40, duration: 1.5)
-        let pathRight = SKAction.moveBy(x: 200, y: 40, duration: 1.5)
-        let flipBeeRight = SKAction.scaleX(to: -1, duration: 0.2)
-        let flipBeeLeft = SKAction.scaleX(to: 1, duration: 0.2)
-        
-        let flightOfTheBee = SKAction.sequence([
-            pathLeft, flipBeeRight, pathRight, flipBeeLeft
-        ])
-        let neverEndingFlight = SKAction.repeatForever(flightOfTheBee)
-        
-        bee.run(neverEndingFlight)
-        
+    func addPlayer() {
+        player.position = CGPoint(x: 150, y: 250)
+        self.addChild(player)
     }
 }
