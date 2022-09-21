@@ -6,12 +6,14 @@
 //
 
 import SpriteKit
+import CoreMotion
 import GameplayKit
 
 class GameScene: SKScene {
     private let cam = SKCameraNode()
     private let ground = Ground()
     private let player = Player()
+    private let motionManager = CMMotionManager()
     
     override func didMove(to view: SKView) {
         self.anchorPoint = .zero // lower left corner
@@ -41,10 +43,46 @@ class GameScene: SKScene {
                 self.addChild(newBee)
             }
         }
+        
+        self.motionManager.startAccelerometerUpdates()
     }
         
     override func update(_ currentTime: TimeInterval) {
         player.update()
+        
+        if let accelData = self.motionManager.accelerometerData {
+            var forceAmount: CGFloat
+            var movement = CGVector()
+            
+            switch UIApplication.shared.statusBarOrientation {
+            case .landscapeLeft:
+                forceAmount = 8000
+            case .landscapeRight:
+                forceAmount = -8000
+            default:
+                forceAmount = 0
+            }
+            
+            if accelData.acceleration.y > 0.15 {
+                movement.dx = forceAmount
+            } else if accelData.acceleration.y < -0.15 {
+                movement.dx = -forceAmount
+            }
+            
+            player.physicsBody?.applyForce(movement)
+        } else {
+            let fakeAccelData = CGFloat.random(in: -0.50...0.50)
+            var forceAmount: CGFloat = 16000
+            var movement = CGVector()
+            
+            if fakeAccelData > 0.15 {
+                movement.dx = forceAmount
+            } else if fakeAccelData < -0.15 {
+                movement.dx = -forceAmount
+            }
+            
+            player.physicsBody?.applyForce(movement)
+        }
     }
     
     override func didSimulatePhysics() {
