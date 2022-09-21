@@ -36,12 +36,15 @@ class GameScene: SKScene {
                 let flight = SKAction.sequence([flightPath1, flightPath2])
                 let flyForever = SKAction.repeatForever(flight)
                 newBee.run(flyForever)
-                
+                newBee.physicsBody?.mass = 0.2
+                newBee.physicsBody?.applyImpulse(CGVector(dx: CGFloat(Int.random(in: -90...90)) , dy:CGFloat(Int.random(in: -90...90))))
                 self.addChild(newBee)
             }
         }
+    }
         
-        
+    override func update(_ currentTime: TimeInterval) {
+        player.update()
     }
     
     override func didSimulatePhysics() {
@@ -56,7 +59,7 @@ class GameScene: SKScene {
     }
     
     func addGround() {
-        ground.position = CGPoint(x: -self.size.width * 2, y: 150)
+        ground.position = CGPoint(x: -self.size.width * 2, y: 30)
         ground.size = CGSize(width: self.size.width * 6, height: 0)
         ground.createChildren()
         self.addChild(ground)
