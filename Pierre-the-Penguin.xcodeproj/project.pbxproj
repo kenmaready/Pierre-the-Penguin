@@ -15,6 +15,7 @@
 		9B07E53B28D75EB800C90C61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B07E53928D75EB800C90C61 /* Main.storyboard */; };
 		9B07E53D28D75EBB00C90C61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B07E53C28D75EBB00C90C61 /* Assets.xcassets */; };
 		9B07E54028D75EBB00C90C61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B07E53E28D75EBB00C90C61 /* LaunchScreen.storyboard */; };
+		9B07E54828DB346700C90C61 /* GameSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B07E54728DB346700C90C61 /* GameSprite.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		9B07E53A28D75EB800C90C61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9B07E53C28D75EBB00C90C61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B07E53F28D75EBB00C90C61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9B07E54728DB346700C90C61 /* GameSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSprite.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				9B07E53928D75EB800C90C61 /* Main.storyboard */,
 				9B07E53C28D75EBB00C90C61 /* Assets.xcassets */,
 				9B07E53E28D75EBB00C90C61 /* LaunchScreen.storyboard */,
+				9B07E54728DB346700C90C61 /* GameSprite.swift */,
 			);
 			path = "Pierre-the-Penguin";
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B07E54828DB346700C90C61 /* GameSprite.swift in Sources */,
 				9B07E53628D75EB800C90C61 /* GameScene.swift in Sources */,
 				9B07E53828D75EB800C90C61 /* GameViewController.swift in Sources */,
 				9B07E53028D75EB800C90C61 /* AppDelegate.swift in Sources */,
@@ -299,6 +303,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationLandscapeLeft";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -327,6 +332,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationLandscapeLeft";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
