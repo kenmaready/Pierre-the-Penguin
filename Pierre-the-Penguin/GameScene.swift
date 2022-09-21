@@ -54,7 +54,7 @@ class GameScene: SKScene {
             var forceAmount: CGFloat
             var movement = CGVector()
             
-            switch UIApplication.shared.statusBarOrientation {
+            switch UIApplication.shared.windows.first?.windowScene?.interfaceOrientation {
             case .landscapeLeft:
                 forceAmount = 8000
             case .landscapeRight:
