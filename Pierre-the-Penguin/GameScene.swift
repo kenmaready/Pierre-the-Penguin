@@ -25,6 +25,8 @@ class GameScene: SKScene {
     let backgroundMusic = SKAudioNode(fileNamed: "background-music.mp3")
     var musicPlaying: Bool = false
     
+    let encounterManager = EncounterManager()
+    
     override func didMove(to view: SKView) {
         self.anchorPoint = .zero // lower left corner
         self.backgroundColor = UIColor(red: 0.4, green: 0.6, blue: 0.95, alpha: 1.0)
@@ -38,6 +40,10 @@ class GameScene: SKScene {
         
         self.addChild(backgroundMusic)
         backgroundMusic.run(SKAction.stop())
+            
+        encounterManager.addEncountersToScene(gameScene: self)
+        encounterManager.encounters[0].position = CGPoint(x: 400, y: 330)
+        
     }
         
     override func update(_ currentTime: TimeInterval) {

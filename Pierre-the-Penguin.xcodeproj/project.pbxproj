@@ -26,6 +26,8 @@
 		9B391FE128DC9548006FD8E5 /* Blade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B391FE028DC9548006FD8E5 /* Blade.swift */; };
 		9B391FE328DCAB82006FD8E5 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B391FE228DCAB82006FD8E5 /* Coin.swift */; };
 		9B391FE528DCBC85006FD8E5 /* background-music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B391FE428DCBC85006FD8E5 /* background-music.mp3 */; };
+		9B391FE828DCD13C006FD8E5 /* EncounterA.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9B391FE728DCD13C006FD8E5 /* EncounterA.sks */; };
+		9BD7455728DCE2D1004616A6 /* EncounterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD7455628DCE2D1004616A6 /* EncounterManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		9B391FE028DC9548006FD8E5 /* Blade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blade.swift; sourceTree = "<group>"; };
 		9B391FE228DCAB82006FD8E5 /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 		9B391FE428DCBC85006FD8E5 /* background-music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "background-music.mp3"; sourceTree = "<group>"; };
+		9B391FE728DCD13C006FD8E5 /* EncounterA.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterA.sks; sourceTree = "<group>"; };
+		9BD7455628DCE2D1004616A6 /* EncounterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncounterManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 		9B07E52E28D75EB800C90C61 /* Pierre-the-Penguin */ = {
 			isa = PBXGroup;
 			children = (
+				9B391FE628DCD0EF006FD8E5 /* Encounters */,
 				9B07E53328D75EB800C90C61 /* Actions.sks */,
 				9B07E53128D75EB800C90C61 /* GameScene.sks */,
 				9B07E52F28D75EB800C90C61 /* AppDelegate.swift */,
@@ -91,6 +96,7 @@
 				9B07E53928D75EB800C90C61 /* Main.storyboard */,
 				9B391FE428DCBC85006FD8E5 /* background-music.mp3 */,
 				9B391FDD28DC9263006FD8E5 /* Sprites */,
+				9BD7455628DCE2D1004616A6 /* EncounterManager.swift */,
 			);
 			path = "Pierre-the-Penguin";
 			sourceTree = "<group>";
@@ -110,6 +116,14 @@
 				9B391FD928DC85CC006FD8E5 /* Star.swift */,
 			);
 			path = Sprites;
+			sourceTree = "<group>";
+		};
+		9B391FE628DCD0EF006FD8E5 /* Encounters */ = {
+			isa = PBXGroup;
+			children = (
+				9B391FE728DCD13C006FD8E5 /* EncounterA.sks */,
+			);
+			path = Encounters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +188,7 @@
 				9B07E53228D75EB800C90C61 /* GameScene.sks in Resources */,
 				9B07E53D28D75EBB00C90C61 /* Assets.xcassets in Resources */,
 				9B07E54028D75EBB00C90C61 /* LaunchScreen.storyboard in Resources */,
+				9B391FE828DCD13C006FD8E5 /* EncounterA.sks in Resources */,
 				9B391FE528DCBC85006FD8E5 /* background-music.mp3 in Resources */,
 				9B07E53428D75EB800C90C61 /* Actions.sks in Resources */,
 			);
@@ -187,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B391FDA28DC85CC006FD8E5 /* Star.swift in Sources */,
+				9BD7455728DCE2D1004616A6 /* EncounterManager.swift in Sources */,
 				9B07E54C28DB42BB00C90C61 /* Ground.swift in Sources */,
 				9B391FE128DC9548006FD8E5 /* Blade.swift in Sources */,
 				9B07E54A28DB355D00C90C61 /* Bee.swift in Sources */,
