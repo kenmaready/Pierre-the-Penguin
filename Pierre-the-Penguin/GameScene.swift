@@ -10,8 +10,7 @@ import GameplayKit
 
 class GameScene: SKScene {
     private let cam = SKCameraNode()
-    private var bg = SKSpriteNode()
-    private var bg2 = SKSpriteNode()
+    private let background = Background()
     private let ground = Ground()
     private let player = Player()
     
@@ -59,8 +58,6 @@ class GameScene: SKScene {
         
     override func update(_ currentTime: TimeInterval) {
         player.update()
-        bg.position.x = initialBackgroundPosition.x + (playerProgress * 0.05)
-        bg2.position.x = initialBackgroundPosition.x + bg2.size.width + (playerProgress * 0.05)
     }
     
     override func didSimulatePhysics() {
@@ -81,6 +78,7 @@ class GameScene: SKScene {
         }
         
         self.camera!.position = CGPoint(x: player.position.x, y: cameraYPos)
+        background.checkForReposition(playerProgress: playerProgress)
         ground.checkForReposition(playerProgress: playerProgress)
     }
     
@@ -105,15 +103,11 @@ class GameScene: SKScene {
     }
     
     func addBackground() {
-        bg = SKSpriteNode(imageNamed: "background-menu")
-        bg.position = initialBackgroundPosition
-        bg.zPosition = -1.0
-        self.addChild(bg)
-        
-        bg2 = SKSpriteNode(imageNamed: "background-menu")
-        bg2.position = CGPoint(x: initialBackgroundPosition.x + bg2.size.width, y: initialBackgroundPosition.y)
-        bg2.zPosition = -1.0
-        self.addChild(bg2)
+        background.position = CGPoint(x: -self.size.width * 2, y: 600)
+        background.zPosition = -1.0
+        background.size = CGSize(width: self.size.width * 6, height: 0)
+        background.createChildren()
+        self.addChild(background)
     }
     
     func addGround() {
