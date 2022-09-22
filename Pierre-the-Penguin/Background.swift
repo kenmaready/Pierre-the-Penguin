@@ -31,10 +31,6 @@ class Background: SKSpriteNode, GameSprite {
         }
         
         jumpWidth = tileSize.width * floor(tileCount / 4)
-        
-        let pointTopLeft = CGPoint(x: 0, y:0)
-        let pointTopRight = CGPoint(x: size.width, y:0)
-        self.physicsBody = SKPhysicsBody(edgeFrom: pointTopLeft, to: pointTopRight)
     }
     
     func checkForReposition(playerProgress: CGFloat) {
