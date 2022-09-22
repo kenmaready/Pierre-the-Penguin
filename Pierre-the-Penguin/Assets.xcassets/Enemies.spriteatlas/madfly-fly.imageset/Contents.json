@@ -5,11 +5,12 @@
       "scale" : "1x"
     },
     {
+      "filename" : "madfly-fly@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "bee@3x.png",
+      "filename" : "madfly-fly@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

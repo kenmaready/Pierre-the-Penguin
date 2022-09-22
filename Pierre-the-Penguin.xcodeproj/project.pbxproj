@@ -20,6 +20,11 @@
 		9B07E54C28DB42BB00C90C61 /* Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B07E54B28DB42BB00C90C61 /* Ground.swift */; };
 		9B07E54E28DB4AA600C90C61 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B07E54D28DB4AA600C90C61 /* Player.swift */; };
 		9B391FD828DC792A006FD8E5 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B391FD728DC792A006FD8E5 /* Background.swift */; };
+		9B391FDA28DC85CC006FD8E5 /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B391FD928DC85CC006FD8E5 /* Star.swift */; };
+		9B391FDC28DC9255006FD8E5 /* MadFly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B391FDB28DC9255006FD8E5 /* MadFly.swift */; };
+		9B391FDF28DC9404006FD8E5 /* Bat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B391FDE28DC9404006FD8E5 /* Bat.swift */; };
+		9B391FE128DC9548006FD8E5 /* Blade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B391FE028DC9548006FD8E5 /* Blade.swift */; };
+		9B391FE328DCAB82006FD8E5 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B391FE228DCAB82006FD8E5 /* Coin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +42,11 @@
 		9B07E54B28DB42BB00C90C61 /* Ground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ground.swift; sourceTree = "<group>"; };
 		9B07E54D28DB4AA600C90C61 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		9B391FD728DC792A006FD8E5 /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
+		9B391FD928DC85CC006FD8E5 /* Star.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
+		9B391FDB28DC9255006FD8E5 /* MadFly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MadFly.swift; sourceTree = "<group>"; };
+		9B391FDE28DC9404006FD8E5 /* Bat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bat.swift; sourceTree = "<group>"; };
+		9B391FE028DC9548006FD8E5 /* Blade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blade.swift; sourceTree = "<group>"; };
+		9B391FE228DCAB82006FD8E5 /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,21 +79,34 @@
 		9B07E52E28D75EB800C90C61 /* Pierre-the-Penguin */ = {
 			isa = PBXGroup;
 			children = (
-				9B07E52F28D75EB800C90C61 /* AppDelegate.swift */,
-				9B07E53128D75EB800C90C61 /* GameScene.sks */,
 				9B07E53328D75EB800C90C61 /* Actions.sks */,
+				9B07E53128D75EB800C90C61 /* GameScene.sks */,
+				9B07E52F28D75EB800C90C61 /* AppDelegate.swift */,
 				9B07E53528D75EB800C90C61 /* GameScene.swift */,
 				9B07E53728D75EB800C90C61 /* GameViewController.swift */,
-				9B07E53928D75EB800C90C61 /* Main.storyboard */,
 				9B07E53C28D75EBB00C90C61 /* Assets.xcassets */,
 				9B07E53E28D75EBB00C90C61 /* LaunchScreen.storyboard */,
-				9B07E54728DB346700C90C61 /* GameSprite.swift */,
-				9B391FD728DC792A006FD8E5 /* Background.swift */,
-				9B07E54928DB355D00C90C61 /* Bee.swift */,
-				9B07E54B28DB42BB00C90C61 /* Ground.swift */,
-				9B07E54D28DB4AA600C90C61 /* Player.swift */,
+				9B07E53928D75EB800C90C61 /* Main.storyboard */,
+				9B391FDD28DC9263006FD8E5 /* Sprites */,
 			);
 			path = "Pierre-the-Penguin";
+			sourceTree = "<group>";
+		};
+		9B391FDD28DC9263006FD8E5 /* Sprites */ = {
+			isa = PBXGroup;
+			children = (
+				9B391FD728DC792A006FD8E5 /* Background.swift */,
+				9B391FDE28DC9404006FD8E5 /* Bat.swift */,
+				9B07E54928DB355D00C90C61 /* Bee.swift */,
+				9B391FE028DC9548006FD8E5 /* Blade.swift */,
+				9B391FE228DCAB82006FD8E5 /* Coin.swift */,
+				9B07E54728DB346700C90C61 /* GameSprite.swift */,
+				9B07E54B28DB42BB00C90C61 /* Ground.swift */,
+				9B391FDB28DC9255006FD8E5 /* MadFly.swift */,
+				9B07E54D28DB4AA600C90C61 /* Player.swift */,
+				9B391FD928DC85CC006FD8E5 /* Star.swift */,
+			);
+			path = Sprites;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,13 +182,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B391FDA28DC85CC006FD8E5 /* Star.swift in Sources */,
 				9B07E54C28DB42BB00C90C61 /* Ground.swift in Sources */,
+				9B391FE128DC9548006FD8E5 /* Blade.swift in Sources */,
 				9B07E54A28DB355D00C90C61 /* Bee.swift in Sources */,
 				9B07E54828DB346700C90C61 /* GameSprite.swift in Sources */,
 				9B391FD828DC792A006FD8E5 /* Background.swift in Sources */,
 				9B07E53628D75EB800C90C61 /* GameScene.swift in Sources */,
+				9B391FDC28DC9255006FD8E5 /* MadFly.swift in Sources */,
+				9B391FE328DCAB82006FD8E5 /* Coin.swift in Sources */,
 				9B07E54E28DB4AA600C90C61 /* Player.swift in Sources */,
 				9B07E53828D75EB800C90C61 /* GameViewController.swift in Sources */,
+				9B391FDF28DC9404006FD8E5 /* Bat.swift in Sources */,
 				9B07E53028D75EB800C90C61 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
