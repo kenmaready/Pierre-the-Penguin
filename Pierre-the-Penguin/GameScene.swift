@@ -22,38 +22,22 @@ class GameScene: SKScene {
     let initialBackgroundPosition = CGPoint(x: 250, y: 250)
     let currentBackgroundPosition = CGPoint()
     
+    let backgroundMusic = SKAudioNode(fileNamed: "background-music.mp3")
+    var musicPlaying: Bool = false
+    
     override func didMove(to view: SKView) {
         self.anchorPoint = .zero // lower left corner
         self.backgroundColor = UIColor(red: 0.4, green: 0.6, blue: 0.95, alpha: 1.0)
         self.physicsWorld.gravity = CGVector(dx: 0, dy: -5)
-        
         
         screenCenterY = self.size.height / 2
         self.camera = cam
         self.addBackground()
         self.addGround()
         self.addPlayer()
-    
-        // add other bees with new Bee() class
-        for x in 0...2 {
-            for y in 0...2 {
-                let newBee = Bee()
-                newBee.position = CGPoint(x: 300 - (50 * x), y: 300 - (50 * y))
-                newBee.zPosition = 1.0
-                let flightX = CGFloat(Int.random(in: -300...300))
-                let flightY = CGFloat(Int.random(in: -800...800))
-                let flightD = 0.03 * CGFloat(sqrt(abs(flightX) * abs(flightY)))
-                let flightPath1 = SKAction.moveBy(x: flightX, y: flightY, duration: flightD)
-                let flightPath2 = SKAction.moveBy(x: -flightX, y: -flightY, duration: flightD)
-                let flight = SKAction.sequence([flightPath1, flightPath2])
-                let flyForever = SKAction.repeatForever(flight)
-                newBee.run(flyForever)
-                newBee.physicsBody?.mass = 0.2
-                newBee.physicsBody?.applyImpulse(CGVector(dx: CGFloat(Int.random(in: -90...90)) , dy:CGFloat(Int.random(in: -90...90))))
-                self.addChild(newBee)
-            }
-        }
         
+        self.addChild(backgroundMusic)
+        backgroundMusic.run(SKAction.stop())
     }
         
     override func update(_ currentTime: TimeInterval) {
@@ -80,6 +64,11 @@ class GameScene: SKScene {
         self.camera!.position = CGPoint(x: player.position.x, y: cameraYPos)
         background.checkForReposition(playerProgress: playerProgress)
         ground.checkForReposition(playerProgress: playerProgress)
+        
+        if player.physicsBody?.velocity.dx ?? 0 <= 0 && player.physicsBody?.velocity.dy ?? 0 == 0 {
+            backgroundMusic.run(SKAction.stop())
+            musicPlaying = false
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -92,6 +81,11 @@ class GameScene: SKScene {
         }
         
         player.startFlapping()
+        
+        if !musicPlaying {
+            backgroundMusic.run(SKAction.play())
+            musicPlaying = true
+        }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -121,4 +115,5 @@ class GameScene: SKScene {
         player.position = initialPlayerPosition
         self.addChild(player)
     }
+    
 }

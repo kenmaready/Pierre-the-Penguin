@@ -25,6 +25,7 @@
 		9B391FDF28DC9404006FD8E5 /* Bat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B391FDE28DC9404006FD8E5 /* Bat.swift */; };
 		9B391FE128DC9548006FD8E5 /* Blade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B391FE028DC9548006FD8E5 /* Blade.swift */; };
 		9B391FE328DCAB82006FD8E5 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B391FE228DCAB82006FD8E5 /* Coin.swift */; };
+		9B391FE528DCBC85006FD8E5 /* background-music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B391FE428DCBC85006FD8E5 /* background-music.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		9B391FDE28DC9404006FD8E5 /* Bat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bat.swift; sourceTree = "<group>"; };
 		9B391FE028DC9548006FD8E5 /* Blade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blade.swift; sourceTree = "<group>"; };
 		9B391FE228DCAB82006FD8E5 /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
+		9B391FE428DCBC85006FD8E5 /* background-music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "background-music.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				9B07E53C28D75EBB00C90C61 /* Assets.xcassets */,
 				9B07E53E28D75EBB00C90C61 /* LaunchScreen.storyboard */,
 				9B07E53928D75EB800C90C61 /* Main.storyboard */,
+				9B391FE428DCBC85006FD8E5 /* background-music.mp3 */,
 				9B391FDD28DC9263006FD8E5 /* Sprites */,
 			);
 			path = "Pierre-the-Penguin";
@@ -171,6 +174,7 @@
 				9B07E53228D75EB800C90C61 /* GameScene.sks in Resources */,
 				9B07E53D28D75EBB00C90C61 /* Assets.xcassets in Resources */,
 				9B07E54028D75EBB00C90C61 /* LaunchScreen.storyboard in Resources */,
+				9B391FE528DCBC85006FD8E5 /* background-music.mp3 in Resources */,
 				9B07E53428D75EB800C90C61 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
