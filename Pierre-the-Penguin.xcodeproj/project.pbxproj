@@ -27,6 +27,8 @@
 		9B391FE328DCAB82006FD8E5 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B391FE228DCAB82006FD8E5 /* Coin.swift */; };
 		9B391FE528DCBC85006FD8E5 /* background-music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B391FE428DCBC85006FD8E5 /* background-music.mp3 */; };
 		9B391FE828DCD13C006FD8E5 /* EncounterA.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9B391FE728DCD13C006FD8E5 /* EncounterA.sks */; };
+		9BB9605928DCF35C00D38DBE /* EncounterB.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9BB9605828DCF35C00D38DBE /* EncounterB.sks */; };
+		9BB9605B28DCF43300D38DBE /* EncounterC.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9BB9605A28DCF43300D38DBE /* EncounterC.sks */; };
 		9BD7455728DCE2D1004616A6 /* EncounterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD7455628DCE2D1004616A6 /* EncounterManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +54,8 @@
 		9B391FE228DCAB82006FD8E5 /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 		9B391FE428DCBC85006FD8E5 /* background-music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "background-music.mp3"; sourceTree = "<group>"; };
 		9B391FE728DCD13C006FD8E5 /* EncounterA.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterA.sks; sourceTree = "<group>"; };
+		9BB9605828DCF35C00D38DBE /* EncounterB.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterB.sks; sourceTree = "<group>"; };
+		9BB9605A28DCF43300D38DBE /* EncounterC.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterC.sks; sourceTree = "<group>"; };
 		9BD7455628DCE2D1004616A6 /* EncounterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncounterManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				9B391FE728DCD13C006FD8E5 /* EncounterA.sks */,
+				9BB9605828DCF35C00D38DBE /* EncounterB.sks */,
+				9BB9605A28DCF43300D38DBE /* EncounterC.sks */,
 			);
 			path = Encounters;
 			sourceTree = "<group>";
@@ -185,7 +191,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B07E53B28D75EB800C90C61 /* Main.storyboard in Resources */,
+				9BB9605B28DCF43300D38DBE /* EncounterC.sks in Resources */,
 				9B07E53228D75EB800C90C61 /* GameScene.sks in Resources */,
+				9BB9605928DCF35C00D38DBE /* EncounterB.sks in Resources */,
 				9B07E53D28D75EBB00C90C61 /* Assets.xcassets in Resources */,
 				9B07E54028D75EBB00C90C61 /* LaunchScreen.storyboard in Resources */,
 				9B391FE828DCD13C006FD8E5 /* EncounterA.sks in Resources */,

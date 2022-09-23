@@ -26,6 +26,8 @@ class GameScene: SKScene {
     var musicPlaying: Bool = false
     
     let encounterManager = EncounterManager()
+    var nextEncounterSpawnPosition = CGFloat(150)
+    let powerUpStar = Star()
     
     override func didMove(to view: SKView) {
         self.anchorPoint = .zero // lower left corner
@@ -44,6 +46,8 @@ class GameScene: SKScene {
         encounterManager.addEncountersToScene(gameScene: self)
         encounterManager.encounters[0].position = CGPoint(x: 400, y: 330)
         
+        self.addChild(powerUpStar)
+        powerUpStar.position = CGPoint(x: -2000, y: -2000)
     }
         
     override func update(_ currentTime: TimeInterval) {
@@ -74,6 +78,21 @@ class GameScene: SKScene {
         if player.physicsBody?.velocity.dx ?? 0 <= 0 && player.physicsBody?.velocity.dy ?? 0 == 0 {
             backgroundMusic.run(SKAction.stop())
             musicPlaying = false
+        }
+        
+        if player.position.x > nextEncounterSpawnPosition {
+            encounterManager.placeNextEncounter(currentXPos: nextEncounterSpawnPosition)
+            nextEncounterSpawnPosition += 1200
+            
+            let starRoll = Int(arc4random_uniform(10))
+            if starRoll == 0 {
+                if abs(player.position.x - powerUpStar.position.x) > 1200 {
+                    let randomYPos = 50 + CGFloat(arc4random_uniform(550))
+                    powerUpStar.position = CGPoint(x: nextEncounterSpawnPosition, y: randomYPos)
+                    powerUpStar.physicsBody?.angularVelocity = 0
+                    powerUpStar.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+                }
+            }
         }
     }
     
