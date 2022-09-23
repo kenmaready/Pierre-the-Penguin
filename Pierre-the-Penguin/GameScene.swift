@@ -163,6 +163,7 @@ extension GameScene {
             print("hit the ground")
         case PhysicsCategory.enemy.rawValue:
             print("hit enemy - take damage")
+            player.takeDamage()
         case PhysicsCategory.coin.rawValue:
             print("collect a coin!")
         case PhysicsCategory.powerup.rawValue:
