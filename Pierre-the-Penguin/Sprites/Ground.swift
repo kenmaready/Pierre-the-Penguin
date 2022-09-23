@@ -39,6 +39,8 @@ class Ground: SKSpriteNode, GameSprite {
         let pointTopLeft = CGPoint(x: 0, y:0)
         let pointTopRight = CGPoint(x: size.width, y:0)
         self.physicsBody = SKPhysicsBody(edgeFrom: pointTopLeft, to: pointTopRight)
+        
+        self.physicsBody?.categoryBitMask = PhysicsCategory.ground.rawValue
     }
     
     func checkForReposition(playerProgress: CGFloat) {

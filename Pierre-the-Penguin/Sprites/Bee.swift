@@ -18,6 +18,10 @@ class Bee: SKSpriteNode, GameSprite {
         self.run(flyAnimation)
         self.physicsBody = SKPhysicsBody(circleOfRadius: size.width / 2)
         self.physicsBody?.affectedByGravity = false
+        
+        self.physicsBody?.categoryBitMask = PhysicsCategory.enemy.rawValue
+        self.physicsBody?.collisionBitMask = ~PhysicsCategory.damagedPenguin.rawValue
+
     }
     
     required init?(coder: NSCoder) {

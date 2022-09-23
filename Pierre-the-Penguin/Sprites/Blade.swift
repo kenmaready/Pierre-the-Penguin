@@ -22,6 +22,9 @@ class Blade: SKSpriteNode, GameSprite {
         
         createAnimations()
         self.run(spinAnimation)
+        
+        self.physicsBody?.categoryBitMask = PhysicsCategory.enemy.rawValue
+        self.physicsBody?.collisionBitMask = ~PhysicsCategory.damagedPenguin.rawValue
     }
     
     required init?(coder: NSCoder) {

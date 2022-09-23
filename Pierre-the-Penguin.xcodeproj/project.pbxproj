@@ -29,6 +29,7 @@
 		9B391FE828DCD13C006FD8E5 /* EncounterA.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9B391FE728DCD13C006FD8E5 /* EncounterA.sks */; };
 		9BB9605928DCF35C00D38DBE /* EncounterB.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9BB9605828DCF35C00D38DBE /* EncounterB.sks */; };
 		9BB9605B28DCF43300D38DBE /* EncounterC.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9BB9605A28DCF43300D38DBE /* EncounterC.sks */; };
+		9BB9605D28DE121100D38DBE /* PhysicsMasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB9605C28DE121100D38DBE /* PhysicsMasks.swift */; };
 		9BD7455728DCE2D1004616A6 /* EncounterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD7455628DCE2D1004616A6 /* EncounterManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		9B391FE728DCD13C006FD8E5 /* EncounterA.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterA.sks; sourceTree = "<group>"; };
 		9BB9605828DCF35C00D38DBE /* EncounterB.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterB.sks; sourceTree = "<group>"; };
 		9BB9605A28DCF43300D38DBE /* EncounterC.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterC.sks; sourceTree = "<group>"; };
+		9BB9605C28DE121100D38DBE /* PhysicsMasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsMasks.swift; sourceTree = "<group>"; };
 		9BD7455628DCE2D1004616A6 /* EncounterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncounterManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,6 +103,7 @@
 				9B391FE428DCBC85006FD8E5 /* background-music.mp3 */,
 				9B391FDD28DC9263006FD8E5 /* Sprites */,
 				9BD7455628DCE2D1004616A6 /* EncounterManager.swift */,
+				9BB9605C28DE121100D38DBE /* PhysicsMasks.swift */,
 			);
 			path = "Pierre-the-Penguin";
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				9B391FE128DC9548006FD8E5 /* Blade.swift in Sources */,
 				9B07E54A28DB355D00C90C61 /* Bee.swift in Sources */,
 				9B07E54828DB346700C90C61 /* GameSprite.swift in Sources */,
+				9BB9605D28DE121100D38DBE /* PhysicsMasks.swift in Sources */,
 				9B391FD828DC792A006FD8E5 /* Background.swift in Sources */,
 				9B07E53628D75EB800C90C61 /* GameScene.swift in Sources */,
 				9B391FDC28DC9255006FD8E5 /* MadFly.swift in Sources */,

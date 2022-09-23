@@ -26,6 +26,11 @@ class Player: SKSpriteNode, GameSprite {
         self.physicsBody?.linearDamping = 0.7
         self.physicsBody?.mass = 12
         self.physicsBody?.allowsRotation = false
+        
+        // assign the physics categories:
+        self.physicsBody?.categoryBitMask = PhysicsCategory.penguin.rawValue
+        self.physicsBody?.contactTestBitMask = PhysicsCategory.enemy.rawValue | PhysicsCategory.ground.rawValue | PhysicsCategory.powerup.rawValue | PhysicsCategory.coin.rawValue
+        self.physicsBody?.collisionBitMask = PhysicsCategory.ground.rawValue
     }
     
     required init?(coder: NSCoder) {

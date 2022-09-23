@@ -21,6 +21,8 @@ class Star: SKSpriteNode, GameSprite {
         
         createAnimations()
         self.run(pulseAnimation)
+        
+        self.physicsBody?.categoryBitMask = PhysicsCategory.powerup.rawValue
     }
     
     required init?(coder: NSCoder) {

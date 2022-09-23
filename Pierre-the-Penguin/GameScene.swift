@@ -8,7 +8,7 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     private let cam = SKCameraNode()
     private let background = Background()
     private let ground = Ground()
@@ -39,6 +39,8 @@ class GameScene: SKScene {
         self.addBackground()
         self.addGround()
         self.addPlayer()
+        self.physicsWorld.contactDelegate = self
+        
         
         self.addChild(backgroundMusic)
         backgroundMusic.run(SKAction.stop())
@@ -141,4 +143,32 @@ class GameScene: SKScene {
         self.addChild(player)
     }
     
+}
+
+// MARK: - SKPhysicsContactDelegage
+
+extension GameScene {
+    func didBegin(_ contact: SKPhysicsContact) {
+        let otherBody: SKPhysicsBody
+        let penguinMask = PhysicsCategory.penguin.rawValue | PhysicsCategory.damagedPenguin.rawValue
+        
+        if (contact.bodyA.categoryBitMask & penguinMask) > 0 {
+            otherBody = contact.bodyB
+        } else {
+            otherBody = contact.bodyA
+        }
+        
+        switch otherBody.categoryBitMask {
+        case PhysicsCategory.ground.rawValue:
+            print("hit the ground")
+        case PhysicsCategory.enemy.rawValue:
+            print("hit enemy - take damage")
+        case PhysicsCategory.coin.rawValue:
+            print("collect a coin!")
+        case PhysicsCategory.powerup.rawValue:
+            print("Start powerup!")
+        default:
+            print("Contact with no game logic")
+        }
+    }
 }
