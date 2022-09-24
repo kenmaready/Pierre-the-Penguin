@@ -42,14 +42,18 @@ class Player: SKSpriteNode, GameSprite {
 
         // temporary flight up at start
         self.physicsBody?.affectedByGravity = false
-        self.startFlapping()
-        self.physicsBody?.applyForce(CGVector(dx: 20.0, dy: -250.0))
+        self.physicsBody?.applyImpulse(CGVector(dx: 100.0, dy: 20.0))
         let startGravitySequence = SKAction.sequence([
             SKAction.wait(forDuration: 0.6
                          ),
             SKAction.run {
-                self.stopFlapping()
                 self.physicsBody?.affectedByGravity = true
+                self.onTap()
+                self.startFlapping()
+            },
+            SKAction.wait(forDuration: 0.8),
+            SKAction.run {
+                self.stopFlapping()
             }
         ])
         self.run(startGravitySequence)

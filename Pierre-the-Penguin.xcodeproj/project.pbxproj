@@ -27,6 +27,11 @@
 		9B391FE528DCBC85006FD8E5 /* background-music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B391FE428DCBC85006FD8E5 /* background-music.mp3 */; };
 		9B391FE828DCD13C006FD8E5 /* EncounterA.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9B391FE728DCD13C006FD8E5 /* EncounterA.sks */; };
 		9BA3C05528DF8D1300835E01 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3C05428DF8D1300835E01 /* MenuScene.swift */; };
+		9BA3C05C28DFC66800835E01 /* BackgroundMusic.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9BA3C05728DFBF9E00835E01 /* BackgroundMusic.m4a */; };
+		9BA3C05D28DFC6EF00835E01 /* Coin.aif in Resources */ = {isa = PBXBuildFile; fileRef = 9BA3C05828DFBFAF00835E01 /* Coin.aif */; };
+		9BA3C05E28DFC6EF00835E01 /* Hurt.aif in Resources */ = {isa = PBXBuildFile; fileRef = 9BA3C05928DFBFC700835E01 /* Hurt.aif */; };
+		9BA3C05F28DFC6EF00835E01 /* Powerup.aif in Resources */ = {isa = PBXBuildFile; fileRef = 9BA3C05A28DFBFD400835E01 /* Powerup.aif */; };
+		9BA3C06028DFC6EF00835E01 /* StartGame.aif in Resources */ = {isa = PBXBuildFile; fileRef = 9BA3C05B28DFBFE600835E01 /* StartGame.aif */; };
 		9BB9605928DCF35C00D38DBE /* EncounterB.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9BB9605828DCF35C00D38DBE /* EncounterB.sks */; };
 		9BB9605B28DCF43300D38DBE /* EncounterC.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9BB9605A28DCF43300D38DBE /* EncounterC.sks */; };
 		9BB9605D28DE121100D38DBE /* PhysicsMasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB9605C28DE121100D38DBE /* PhysicsMasks.swift */; };
@@ -61,6 +66,11 @@
 		9B391FE428DCBC85006FD8E5 /* background-music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "background-music.mp3"; sourceTree = "<group>"; };
 		9B391FE728DCD13C006FD8E5 /* EncounterA.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterA.sks; sourceTree = "<group>"; };
 		9BA3C05428DF8D1300835E01 /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
+		9BA3C05728DFBF9E00835E01 /* BackgroundMusic.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = BackgroundMusic.m4a; sourceTree = "<group>"; };
+		9BA3C05828DFBFAF00835E01 /* Coin.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Coin.aif; sourceTree = "<group>"; };
+		9BA3C05928DFBFC700835E01 /* Hurt.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hurt.aif; sourceTree = "<group>"; };
+		9BA3C05A28DFBFD400835E01 /* Powerup.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Powerup.aif; sourceTree = "<group>"; };
+		9BA3C05B28DFBFE600835E01 /* StartGame.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = StartGame.aif; sourceTree = "<group>"; };
 		9BB9605828DCF35C00D38DBE /* EncounterB.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterB.sks; sourceTree = "<group>"; };
 		9BB9605A28DCF43300D38DBE /* EncounterC.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterC.sks; sourceTree = "<group>"; };
 		9BB9605C28DE121100D38DBE /* PhysicsMasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsMasks.swift; sourceTree = "<group>"; };
@@ -103,6 +113,7 @@
 		9B07E52E28D75EB800C90C61 /* Pierre-the-Penguin */ = {
 			isa = PBXGroup;
 			children = (
+				9BA3C05628DFBF8B00835E01 /* Sound */,
 				9B391FE428DCBC85006FD8E5 /* background-music.mp3 */,
 				9BB9606028DE520400D38DBE /* coin-collect.mp3 */,
 				9BB9605E28DE35DC00D38DBE /* pierre-dies.mp3 */,
@@ -151,6 +162,18 @@
 				9BB9605A28DCF43300D38DBE /* EncounterC.sks */,
 			);
 			path = Encounters;
+			sourceTree = "<group>";
+		};
+		9BA3C05628DFBF8B00835E01 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				9BA3C05728DFBF9E00835E01 /* BackgroundMusic.m4a */,
+				9BA3C05828DFBFAF00835E01 /* Coin.aif */,
+				9BA3C05928DFBFC700835E01 /* Hurt.aif */,
+				9BA3C05A28DFBFD400835E01 /* Powerup.aif */,
+				9BA3C05B28DFBFE600835E01 /* StartGame.aif */,
+			);
+			path = Sound;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +234,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BA3C05D28DFC6EF00835E01 /* Coin.aif in Resources */,
+				9BA3C05E28DFC6EF00835E01 /* Hurt.aif in Resources */,
+				9BA3C05F28DFC6EF00835E01 /* Powerup.aif in Resources */,
+				9BA3C06028DFC6EF00835E01 /* StartGame.aif in Resources */,
+				9BA3C05C28DFC66800835E01 /* BackgroundMusic.m4a in Resources */,
 				9BB9606528DE602100D38DBE /* star-contact.mp3 in Resources */,
 				9BB9606128DE520400D38DBE /* coin-collect.mp3 in Resources */,
 				9B07E53B28D75EB800C90C61 /* Main.storyboard in Resources */,

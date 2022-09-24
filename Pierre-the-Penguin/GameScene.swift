@@ -17,7 +17,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var screenCenterY: CGFloat = 0
     
-    let initialPlayerPosition = CGPoint(x: 150, y:250)
+    let initialPlayerPosition = CGPoint(x: 0, y:36)
     var playerProgress = CGFloat()
     var coinsCollected = 0
     
@@ -49,12 +49,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.physicsWorld.contactDelegate = self
         
         
-        self.addChild(backgroundMusic)
-        backgroundMusic.run(SKAction.stop())
-        backgroundMusic.run(SKAction.changeVolume(to: Float(0.8), duration: 0))
+//        self.addChild(backgroundMusic)
+//        backgroundMusic.run(SKAction.stop())
+//        backgroundMusic.run(SKAction.changeVolume(to: Float(0.8), duration: 0))
             
         encounterManager.addEncountersToScene(gameScene: self)
-        encounterManager.encounters[0].position = CGPoint(x: 400, y: 330)
+        for encounter in encounterManager.encounters {
+            encounter.position.x += 200
+            
+        }
         
         self.addChild(powerUpStar)
         powerUpStar.position = CGPoint(x: -2000, y: -2000)
@@ -86,11 +89,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         for background in self.backgrounds {
             background.updatePosition(playerProgress: playerProgress)
         }
-        
-        if player.physicsBody?.velocity.dx ?? 0 <= 0 && player.physicsBody?.velocity.dy ?? 0 == 0 {
-            backgroundMusic.run(SKAction.stop())
-            musicPlaying = false
-        }
+    
         
         if player.position.x > nextEncounterSpawnPosition {
             encounterManager.placeNextEncounter(currentXPos: nextEncounterSpawnPosition)
@@ -124,11 +123,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         player.startFlapping()
-        
-        if !musicPlaying {
-            backgroundMusic.run(SKAction.play())
-            musicPlaying = true
-        }
         
     }
     
