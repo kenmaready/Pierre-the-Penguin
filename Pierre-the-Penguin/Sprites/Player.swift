@@ -38,7 +38,21 @@ class Player: SKSpriteNode, GameSprite {
         // assign the physics categories:
         self.physicsBody?.categoryBitMask = PhysicsCategory.penguin.rawValue
         self.physicsBody?.contactTestBitMask = PhysicsCategory.enemy.rawValue | PhysicsCategory.ground.rawValue | PhysicsCategory.powerup.rawValue | PhysicsCategory.coin.rawValue
-        self.physicsBody?.collisionBitMask = PhysicsCategory.ground.rawValue
+        self.physicsBody?.collisionBitMask = PhysicsCategory.ground.rawValue 
+
+        // temporary flight up at start
+        self.physicsBody?.affectedByGravity = false
+        self.startFlapping()
+        self.physicsBody?.applyForce(CGVector(dx: 20.0, dy: -250.0))
+        let startGravitySequence = SKAction.sequence([
+            SKAction.wait(forDuration: 0.6
+                         ),
+            SKAction.run {
+                self.stopFlapping()
+                self.physicsBody?.affectedByGravity = true
+            }
+        ])
+        self.run(startGravitySequence)
     }
     
     required init?(coder: NSCoder) {

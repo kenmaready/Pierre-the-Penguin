@@ -158,6 +158,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func addPlayer() {
         player.position = initialPlayerPosition
+        player.zPosition = 10
+        
+        if let dotEmitter = SKEmitterNode(fileNamed: "PierrePath") {
+            dotEmitter.particleZPosition = -1
+            player.addChild(dotEmitter)
+            dotEmitter.targetNode = self
+        }
+        
         self.addChild(player)
     }
     
