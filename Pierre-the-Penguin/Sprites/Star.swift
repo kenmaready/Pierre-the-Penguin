@@ -11,6 +11,7 @@ class Star: SKSpriteNode, GameSprite {
     var textureAtlas: SKTextureAtlas = SKTextureAtlas(named: "Environment")
     var initialSize: CGSize = CGSize(width: 40, height: 38)
     var pulseAnimation = SKAction()
+    let starContactSound = SKAudioNode(fileNamed: "star-contact.mp3")
     
     init() {
         let starTexture = textureAtlas.textureNamed("star")
@@ -21,6 +22,10 @@ class Star: SKSpriteNode, GameSprite {
         
         createAnimations()
         self.run(pulseAnimation)
+        
+        starContactSound.autoplayLooped = false
+        self.addChild(starContactSound)
+        starContactSound.run(SKAction.changeVolume(to: Float(10), duration: 0))
         
         self.physicsBody?.categoryBitMask = PhysicsCategory.powerup.rawValue
     }
@@ -42,6 +47,33 @@ class Star: SKSpriteNode, GameSprite {
         ])
         let pulseSequence = SKAction.sequence([pulseOutGroup, pulseInGroup])
         pulseAnimation = SKAction.repeatForever(pulseSequence)
+    }
+    
+    func collect() {
+        self.physicsBody?.categoryBitMask = 0
+        let collectAnimation = SKAction.group([
+            SKAction.run {
+                self.physicsBody?.velocity = CGVector.zero
+            },
+            SKAction.fadeAlpha(to: 0, duration: 0.4),
+            SKAction.scale(to: 2, duration: 0.2),
+            SKAction.rotate(byAngle: 10, duration: 0.4),
+        ])
+        let resetAfterCollected = SKAction.run {
+            self.position.y = 5000
+            self.alpha = 1
+            self.xScale = 1
+            self.yScale = 1
+            self.physicsBody?.categoryBitMask = PhysicsCategory.powerup.rawValue
+        }
+        
+        let collectSequence = SKAction.sequence([
+            collectAnimation,
+            resetAfterCollected
+        ])
+        
+        starContactSound.run(SKAction.play())
+        self.run(collectSequence)
     }
     
     func onTap() {

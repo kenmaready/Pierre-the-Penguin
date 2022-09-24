@@ -31,6 +31,8 @@
 		9BB9605B28DCF43300D38DBE /* EncounterC.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9BB9605A28DCF43300D38DBE /* EncounterC.sks */; };
 		9BB9605D28DE121100D38DBE /* PhysicsMasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB9605C28DE121100D38DBE /* PhysicsMasks.swift */; };
 		9BB9605F28DE35DC00D38DBE /* pierre-dies.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9BB9605E28DE35DC00D38DBE /* pierre-dies.mp3 */; };
+		9BB9606128DE520400D38DBE /* coin-collect.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9BB9606028DE520400D38DBE /* coin-collect.mp3 */; };
+		9BB9606528DE602100D38DBE /* star-contact.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9BB9606428DE602100D38DBE /* star-contact.mp3 */; };
 		9BD7455728DCE2D1004616A6 /* EncounterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD7455628DCE2D1004616A6 /* EncounterManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +62,8 @@
 		9BB9605A28DCF43300D38DBE /* EncounterC.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterC.sks; sourceTree = "<group>"; };
 		9BB9605C28DE121100D38DBE /* PhysicsMasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsMasks.swift; sourceTree = "<group>"; };
 		9BB9605E28DE35DC00D38DBE /* pierre-dies.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "pierre-dies.mp3"; sourceTree = "<group>"; };
+		9BB9606028DE520400D38DBE /* coin-collect.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "coin-collect.mp3"; sourceTree = "<group>"; };
+		9BB9606428DE602100D38DBE /* star-contact.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "star-contact.mp3"; sourceTree = "<group>"; };
 		9BD7455628DCE2D1004616A6 /* EncounterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncounterManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,8 +109,10 @@
 				9B391FE428DCBC85006FD8E5 /* background-music.mp3 */,
 				9B391FDD28DC9263006FD8E5 /* Sprites */,
 				9BD7455628DCE2D1004616A6 /* EncounterManager.swift */,
+				9BB9606028DE520400D38DBE /* coin-collect.mp3 */,
 				9BB9605C28DE121100D38DBE /* PhysicsMasks.swift */,
 				9BB9605E28DE35DC00D38DBE /* pierre-dies.mp3 */,
+				9BB9606428DE602100D38DBE /* star-contact.mp3 */,
 			);
 			path = "Pierre-the-Penguin";
 			sourceTree = "<group>";
@@ -196,6 +202,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BB9606528DE602100D38DBE /* star-contact.mp3 in Resources */,
+				9BB9606128DE520400D38DBE /* coin-collect.mp3 in Resources */,
 				9B07E53B28D75EB800C90C61 /* Main.storyboard in Resources */,
 				9BB9605B28DCF43300D38DBE /* EncounterC.sks in Resources */,
 				9B07E53228D75EB800C90C61 /* GameScene.sks in Resources */,

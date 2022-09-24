@@ -14,6 +14,7 @@ class Player: SKSpriteNode, GameSprite {
     var soarAnimation = SKAction()
     var flapping = false
     let maxFlappingForce: CGFloat = 32000
+    var forwardVelocity: CGFloat = 4000
     let maxHeight: CGFloat = 1000
     let deathSound = SKAudioNode(fileNamed: "pierre-dies.mp3")
     
@@ -77,12 +78,12 @@ class Player: SKSpriteNode, GameSprite {
             self.physicsBody?.categoryBitMask = PhysicsCategory.damagedPenguin.rawValue
         }
         let slowFade = SKAction.sequence([
-            SKAction.fadeAlpha(to: 0.3, duration: 0.35),
-            SKAction.fadeAlpha(to: 0.7, duration: 0.35)
+            SKAction.fadeAlpha(to: 0.25, duration: 0.35),
+            SKAction.fadeAlpha(to: 0.25, duration: 0.35)
         ])
         let fastFade = SKAction.sequence([
             SKAction.fadeAlpha(to: 0.3, duration: 0.2),
-            SKAction.fadeAlpha(to: 0.7, duration: 0.2)
+            SKAction.fadeAlpha(to: 0.95, duration: 0.2)
         ])
         let fadeOutAndIn = SKAction.sequence([
             SKAction.repeat(slowFade, count: 2),
@@ -134,7 +135,7 @@ class Player: SKSpriteNode, GameSprite {
                 forceToApply -= flappingForceDampening
             }
             
-            self.physicsBody?.applyForce(CGVector(dx: 4000, dy: forceToApply))
+            self.physicsBody?.applyForce(CGVector(dx: forwardVelocity, dy: forceToApply))
         }
         
         if self.physicsBody!.velocity.dy > 300 {
@@ -178,6 +179,39 @@ class Player: SKSpriteNode, GameSprite {
         } else {
             self.run(self.damageAnimation)
         }
+    }
+    
+    func starPower() {
+        self.removeAction(forKey: "starPower")
+        self.forwardVelocity = 6000
+        self.invulnerable = true
+        print("now invulnerable")
         
+        let starSequence = SKAction.sequence([
+            SKAction.scale(to: 1.5, duration: 0.3),
+            SKAction.wait(forDuration: 8),
+            SKAction.scale(to: 1, duration: 1),
+            SKAction.run {
+                self.forwardVelocity = 4000
+                self.invulnerable = false
+                print("no longer invulnerable")
+            }
+        ])
+        
+        let playerPulse = SKAction.sequence([
+            SKAction.colorize(with: .gray, colorBlendFactor: 1.0, duration: 0.1),
+            SKAction.wait(forDuration: 0.05),
+            SKAction.colorize(withColorBlendFactor: 0.0, duration: 0.1)
+        ])
+        
+        let starGroup = SKAction.group([
+            starSequence,
+            SKAction.repeat(playerPulse, count: 37)
+        ])
+        
+        print("running starSequence....")
+        self.run(starGroup, withKey: "starPower")
+        print("starSequence started...")
     }
 }
+

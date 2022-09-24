@@ -18,6 +18,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     let initialPlayerPosition = CGPoint(x: 150, y:250)
     var playerProgress = CGFloat()
+    var coinsCollected = 0
     
     let initialBackgroundPosition = CGPoint(x: 250, y: 250)
     let currentBackgroundPosition = CGPoint()
@@ -44,6 +45,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         self.addChild(backgroundMusic)
         backgroundMusic.run(SKAction.stop())
+        backgroundMusic.run(SKAction.changeVolume(to: Float(0.8), duration: 0))
             
         encounterManager.addEncountersToScene(gameScene: self)
         encounterManager.encounters[0].position = CGPoint(x: 400, y: 330)
@@ -165,9 +167,17 @@ extension GameScene {
             print("hit enemy - take damage")
             player.takeDamage()
         case PhysicsCategory.coin.rawValue:
-            print("collect a coin!")
+            if let coin = otherBody.node as? Coin {
+                coin.collect()
+                self.coinsCollected += coin.value
+                print("Coin collected!")
+            }
         case PhysicsCategory.powerup.rawValue:
-            print("Start powerup!")
+            if let star = otherBody.node as? Star {
+                star.collect()
+                player.starPower()
+                print("Start powerup!")
+            }
         default:
             print("Contact with no game logic")
         }
