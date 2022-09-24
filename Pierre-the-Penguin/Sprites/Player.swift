@@ -182,6 +182,10 @@ class Player: SKSpriteNode, GameSprite {
         deathSound.run(SKAction.play())
         self.run(self.dieAnimation)
         self.flapping = false
+        
+        if let gameScene = self.parent as? GameScene {
+            gameScene.gameOver()
+        }
     }
     
     func takeDamage() {

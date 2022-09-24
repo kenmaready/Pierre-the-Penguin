@@ -169,6 +169,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(player)
     }
     
+    func gameOver() {
+        hud.showButtons()
+    }
 }
 
 // MARK: - SKPhysicsContactDelegage
