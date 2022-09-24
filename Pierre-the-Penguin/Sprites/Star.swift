@@ -19,9 +19,10 @@ class Star: SKSpriteNode, GameSprite {
         
         self.physicsBody = SKPhysicsBody(circleOfRadius: size.width / 2)
         self.physicsBody?.affectedByGravity = false
+        self.physicsBody?.isDynamic = false
         
         createAnimations()
-        self.run(pulseAnimation)
+        self.run(pulseAnimation, withKey: "pulseAnimation")
         
         starContactSound.autoplayLooped = false
         self.addChild(starContactSound)
@@ -53,11 +54,13 @@ class Star: SKSpriteNode, GameSprite {
         self.physicsBody?.categoryBitMask = 0
         let collectAnimation = SKAction.group([
             SKAction.run {
-                self.physicsBody?.velocity = CGVector.zero
+                self.removeAction(forKey: "pulseAnimation")
             },
-            SKAction.fadeAlpha(to: 0, duration: 0.4),
-            SKAction.scale(to: 2, duration: 0.2),
-            SKAction.rotate(byAngle: 10, duration: 0.4),
+            SKAction.scale(by: 1.6, duration: 0.2),
+            SKAction.fadeAlpha(to: 1, duration: 0.05),
+            SKAction.move(by: CGVector(dx: 0.0, dy: 200.0), duration: 0.4),
+            SKAction.rotate(byAngle: 6, duration: 0.4),
+            SKAction.colorize(with: .yellow, colorBlendFactor: 1.0, duration: 0.4)
         ])
         let resetAfterCollected = SKAction.run {
             self.position.y = 5000
@@ -65,6 +68,7 @@ class Star: SKSpriteNode, GameSprite {
             self.xScale = 1
             self.yScale = 1
             self.physicsBody?.categoryBitMask = PhysicsCategory.powerup.rawValue
+            self.run(self.pulseAnimation, withKey: "pulseAnimation")
         }
         
         let collectSequence = SKAction.sequence([

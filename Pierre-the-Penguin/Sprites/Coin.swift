@@ -38,10 +38,20 @@ class Coin: SKSpriteNode, GameSprite {
     
     func collect() {
         self.physicsBody?.categoryBitMask = 0
+        
+        let coinBounce = SKAction.sequence([
+            SKAction.move(by: CGVector(dx: 0.0, dy: 100), duration: 0.2),
+            SKAction.move(by:CGVector(dx: 0.0, dy: -100), duration: 0.2),
+            SKAction.move(by: CGVector(dx: 0.0, dy: 50), duration: 0.1),
+            SKAction.move(by:CGVector(dx: 0.0, dy: -50), duration: 0.1),
+            SKAction.move(by: CGVector(dx: 0.0, dy: 25), duration: 0.1),
+            SKAction.move(by:CGVector(dx: 0.0, dy: -25), duration: 0.1),
+        ])
+        
         let collectAnimation = SKAction.group([
-            SKAction.fadeAlpha(to: 0, duration: 0.2),
             SKAction.scale(to: 1.5, duration: 0.2),
-            SKAction.move(by: CGVector(dx: 0, dy: 25), duration: 0.2)
+            SKAction.fadeAlpha(to: 0.0, duration: 1.0),
+            coinBounce
         ])
         let resetAfterCollected = SKAction.run {
             self.position.y = 5000
