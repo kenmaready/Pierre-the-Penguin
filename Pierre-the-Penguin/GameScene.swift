@@ -10,7 +10,7 @@ import GameplayKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     private let cam = SKCameraNode()
-    private let background = Background()
+    private var backgrounds: [Background] = []
     private let ground = Ground()
     private let player = Player()
     private let hud = HUD()
@@ -43,7 +43,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         hud.createHudNodes(screensize: self.size)
         self.camera!.addChild(hud)
         
-        self.addBackground()
+        self.addBackgrounds()
         self.addGround()
         self.addPlayer()
         self.physicsWorld.contactDelegate = self
@@ -82,8 +82,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         self.camera!.position = CGPoint(x: player.position.x, y: cameraYPos)
-        background.checkForReposition(playerProgress: playerProgress)
         ground.checkForReposition(playerProgress: playerProgress)
+        for background in self.backgrounds {
+            background.updatePosition(playerProgress: playerProgress)
+        }
         
         if player.physicsBody?.velocity.dx ?? 0 <= 0 && player.physicsBody?.velocity.dy ?? 0 == 0 {
             backgroundMusic.run(SKAction.stop())
@@ -131,12 +133,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player.stopFlapping()
     }
     
-    func addBackground() {
-        background.position = CGPoint(x: -self.size.width * 2, y: 600)
-        background.zPosition = -1.0
-        background.size = CGSize(width: self.size.width * 6, height: 0)
-        background.createChildren()
-        self.addChild(background)
+    func addBackgrounds() {
+        let backgroundImageNames = [
+            "background-front",
+            "background-middle",
+            "background-back"
+        ]
+        let backgroundZPositions: [CGFloat] = [-5, -10, -15]
+        let backgroundMovementMultipliers = [0.75, 0.5, 0.2]
+        
+        for i in 0..<3 {
+            backgrounds.append(Background())
+            backgrounds[i].spawn(parentNode: self, imageName: backgroundImageNames[i], zPosition: backgroundZPositions[i], movementMultiplier: backgroundMovementMultipliers[i])
+        }
+        
     }
     
     func addGround() {

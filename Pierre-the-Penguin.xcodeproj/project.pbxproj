@@ -19,7 +19,6 @@
 		9B07E54A28DB355D00C90C61 /* Bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B07E54928DB355D00C90C61 /* Bee.swift */; };
 		9B07E54C28DB42BB00C90C61 /* Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B07E54B28DB42BB00C90C61 /* Ground.swift */; };
 		9B07E54E28DB4AA600C90C61 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B07E54D28DB4AA600C90C61 /* Player.swift */; };
-		9B391FD828DC792A006FD8E5 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B391FD728DC792A006FD8E5 /* Background.swift */; };
 		9B391FDA28DC85CC006FD8E5 /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B391FD928DC85CC006FD8E5 /* Star.swift */; };
 		9B391FDC28DC9255006FD8E5 /* MadFly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B391FDB28DC9255006FD8E5 /* MadFly.swift */; };
 		9B391FDF28DC9404006FD8E5 /* Bat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B391FDE28DC9404006FD8E5 /* Bat.swift */; };
@@ -34,6 +33,7 @@
 		9BB9606128DE520400D38DBE /* coin-collect.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9BB9606028DE520400D38DBE /* coin-collect.mp3 */; };
 		9BB9606528DE602100D38DBE /* star-contact.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9BB9606428DE602100D38DBE /* star-contact.mp3 */; };
 		9BB9606728DF383600D38DBE /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB9606628DF383600D38DBE /* HUD.swift */; };
+		9BB9606928DF407700D38DBE /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB9606828DF407700D38DBE /* Background.swift */; };
 		9BD7455728DCE2D1004616A6 /* EncounterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD7455628DCE2D1004616A6 /* EncounterManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,7 +51,6 @@
 		9B07E54928DB355D00C90C61 /* Bee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bee.swift; sourceTree = "<group>"; };
 		9B07E54B28DB42BB00C90C61 /* Ground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ground.swift; sourceTree = "<group>"; };
 		9B07E54D28DB4AA600C90C61 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		9B391FD728DC792A006FD8E5 /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		9B391FD928DC85CC006FD8E5 /* Star.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
 		9B391FDB28DC9255006FD8E5 /* MadFly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MadFly.swift; sourceTree = "<group>"; };
 		9B391FDE28DC9404006FD8E5 /* Bat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bat.swift; sourceTree = "<group>"; };
@@ -66,6 +65,7 @@
 		9BB9606028DE520400D38DBE /* coin-collect.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "coin-collect.mp3"; sourceTree = "<group>"; };
 		9BB9606428DE602100D38DBE /* star-contact.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "star-contact.mp3"; sourceTree = "<group>"; };
 		9BB9606628DF383600D38DBE /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
+		9BB9606828DF407700D38DBE /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		9BD7455628DCE2D1004616A6 /* EncounterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncounterManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +116,7 @@
 				9B07E53E28D75EBB00C90C61 /* LaunchScreen.storyboard */,
 				9B07E53928D75EB800C90C61 /* Main.storyboard */,
 				9B391FDD28DC9263006FD8E5 /* Sprites */,
+				9BB9606828DF407700D38DBE /* Background.swift */,
 			);
 			path = "Pierre-the-Penguin";
 			sourceTree = "<group>";
@@ -123,7 +124,6 @@
 		9B391FDD28DC9263006FD8E5 /* Sprites */ = {
 			isa = PBXGroup;
 			children = (
-				9B391FD728DC792A006FD8E5 /* Background.swift */,
 				9B391FDE28DC9404006FD8E5 /* Bat.swift */,
 				9B07E54928DB355D00C90C61 /* Bee.swift */,
 				9B391FE028DC9548006FD8E5 /* Blade.swift */,
@@ -231,11 +231,11 @@
 				9BD7455728DCE2D1004616A6 /* EncounterManager.swift in Sources */,
 				9B07E54C28DB42BB00C90C61 /* Ground.swift in Sources */,
 				9B391FE128DC9548006FD8E5 /* Blade.swift in Sources */,
+				9BB9606928DF407700D38DBE /* Background.swift in Sources */,
 				9B07E54A28DB355D00C90C61 /* Bee.swift in Sources */,
 				9BB9606728DF383600D38DBE /* HUD.swift in Sources */,
 				9B07E54828DB346700C90C61 /* GameSprite.swift in Sources */,
 				9BB9605D28DE121100D38DBE /* PhysicsMasks.swift in Sources */,
-				9B391FD828DC792A006FD8E5 /* Background.swift in Sources */,
 				9B07E53628D75EB800C90C61 /* GameScene.swift in Sources */,
 				9B391FDC28DC9255006FD8E5 /* MadFly.swift in Sources */,
 				9B391FE328DCAB82006FD8E5 /* Coin.swift in Sources */,

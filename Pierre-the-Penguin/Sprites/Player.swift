@@ -113,11 +113,13 @@ class Player: SKSpriteNode, GameSprite {
         
         self.dieAnimation = SKAction.sequence([
             startDie,
-            SKAction.scale(to: 1.3, duration: 0.5),
-            SKAction.wait(forDuration: 0.5),
-            SKAction.rotate(toAngle: 3, duration: 1.5),
-            SKAction.wait(forDuration: 0.5),
-            endDie
+            SKAction.scale(to: 1.3, duration: 0.3),
+            SKAction.wait(forDuration: 0.2),
+            SKAction.rotate(toAngle: 3, duration: 0.6),
+            SKAction.wait(forDuration: 0.2),
+            SKAction.group([
+            SKAction.scale(to: 1.0, duration: 0.3),
+            endDie])
         ])
     }
     
