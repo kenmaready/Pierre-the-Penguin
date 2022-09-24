@@ -164,7 +164,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             dotEmitter.particleZPosition = -1
             player.addChild(dotEmitter)
             dotEmitter.targetNode = self
-        }
+            }
         
         self.addChild(player)
     }
