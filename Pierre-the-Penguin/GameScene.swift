@@ -172,11 +172,12 @@ extension GameScene {
         case PhysicsCategory.enemy.rawValue:
             print("hit enemy - take damage")
             player.takeDamage()
+            hud.setHealthDisplay(newHealth: player.health)
         case PhysicsCategory.coin.rawValue:
             if let coin = otherBody.node as? Coin {
                 coin.collect()
                 self.coinsCollected += coin.value
-                print("Coin collected!")
+                hud.setCoinDisplay(newCoinCount: self.coinsCollected)
             }
         case PhysicsCategory.powerup.rawValue:
             if let star = otherBody.node as? Star {
