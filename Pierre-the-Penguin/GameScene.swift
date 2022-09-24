@@ -13,6 +13,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private let background = Background()
     private let ground = Ground()
     private let player = Player()
+    private let hud = HUD()
     
     var screenCenterY: CGFloat = 0
     
@@ -37,6 +38,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         screenCenterY = self.size.height / 2
         self.camera = cam
+        self.addChild(self.camera!)
+        self.camera!.zPosition = 50
+        hud.createHudNodes(screensize: self.size)
+        self.camera!.addChild(hud)
+        
         self.addBackground()
         self.addGround()
         self.addPlayer()
