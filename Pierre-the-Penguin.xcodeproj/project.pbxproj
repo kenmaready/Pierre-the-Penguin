@@ -34,6 +34,7 @@
 		9BB9606528DE602100D38DBE /* star-contact.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9BB9606428DE602100D38DBE /* star-contact.mp3 */; };
 		9BB9606728DF383600D38DBE /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB9606628DF383600D38DBE /* HUD.swift */; };
 		9BB9606928DF407700D38DBE /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB9606828DF407700D38DBE /* Background.swift */; };
+		9BB9606B28DF4B3D00D38DBE /* PierrePath.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9BB9606A28DF4B3D00D38DBE /* PierrePath.sks */; };
 		9BD7455728DCE2D1004616A6 /* EncounterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD7455628DCE2D1004616A6 /* EncounterManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		9BB9606428DE602100D38DBE /* star-contact.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "star-contact.mp3"; sourceTree = "<group>"; };
 		9BB9606628DF383600D38DBE /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		9BB9606828DF407700D38DBE /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
+		9BB9606A28DF4B3D00D38DBE /* PierrePath.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PierrePath.sks; sourceTree = "<group>"; };
 		9BD7455628DCE2D1004616A6 /* EncounterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncounterManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +119,7 @@
 				9B07E53928D75EB800C90C61 /* Main.storyboard */,
 				9B391FDD28DC9263006FD8E5 /* Sprites */,
 				9BB9606828DF407700D38DBE /* Background.swift */,
+				9BB9606A28DF4B3D00D38DBE /* PierrePath.sks */,
 			);
 			path = "Pierre-the-Penguin";
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				9BB9605928DCF35C00D38DBE /* EncounterB.sks in Resources */,
 				9B07E53D28D75EBB00C90C61 /* Assets.xcassets in Resources */,
 				9B07E54028D75EBB00C90C61 /* LaunchScreen.storyboard in Resources */,
+				9BB9606B28DF4B3D00D38DBE /* PierrePath.sks in Resources */,
 				9B391FE828DCD13C006FD8E5 /* EncounterA.sks in Resources */,
 				9B391FE528DCBC85006FD8E5 /* background-music.mp3 in Resources */,
 				9B07E53428D75EB800C90C61 /* Actions.sks in Resources */,
