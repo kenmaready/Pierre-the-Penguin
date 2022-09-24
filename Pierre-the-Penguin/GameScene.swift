@@ -115,6 +115,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if let gameSprite = nodeTouched as? GameSprite {
                 gameSprite.onTap()
             }
+            
+            if nodeTouched.name == "restartGame" {
+                self.view?.presentScene(GameScene(size: self.size), transition: .crossFade(withDuration: 0.6))
+            } else if nodeTouched.name == "returnToMenu" {
+                self.view?.presentScene(MenuScene(size: self.size), transition: .crossFade(withDuration: 0.6))
+            }
         }
         
         player.startFlapping()
@@ -123,6 +129,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             backgroundMusic.run(SKAction.play())
             musicPlaying = true
         }
+        
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
