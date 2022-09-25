@@ -21,6 +21,7 @@ class Player: SKSpriteNode, GameSprite {
     let deathSound = SKAction.playSoundFileNamed("Dies.mp3", waitForCompletion: false)
     
     var health: Int = 3
+    var maxHealth: Int = 3
     var invulnerable = false
     var damaged = false
     var damageAnimation = SKAction()

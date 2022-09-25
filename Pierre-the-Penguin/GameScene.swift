@@ -12,9 +12,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private let cam = SKCameraNode()
     private var backgrounds: [Background] = []
     private let ground = Ground()
-    private let player = Player()
-    private let particlePool = ParticlePool()
-    private let hud = HUD()
+    let player = Player()
+    let particlePool = ParticlePool()
+    let hud = HUD()
     private let gameStartSound = SKAction.playSoundFileNamed("StartGame", waitForCompletion: false)
     
     var screenCenterY: CGFloat = 0
@@ -31,7 +31,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     let encounterManager = EncounterManager()
     var nextEncounterSpawnPosition = CGFloat(150)
+    
     let powerUpStar = Star()
+    let heartCrate: Crate = Crate()
     
     override func didMove(to view: SKView) {
         self.anchorPoint = .zero // lower left corner
@@ -58,6 +60,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(powerUpStar)
         powerUpStar.position = CGPoint(x: -2000, y: -2000)
         particlePool.addEmittersToScene(scene: self)
+        
+        self.addChild(heartCrate)
+        heartCrate.position = CGPoint(x: -2100, y: 2100)
+        heartCrate.turnToHeartCrate()
         
         self.run(gameStartSound)
     }
@@ -102,6 +108,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     powerUpStar.physicsBody?.angularVelocity = 0
                     powerUpStar.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
                 }
+            }
+            
+            let heartRoll = Int(arc4random_uniform(10))
+            if heartRoll == 1 {
+                heartCrate.reset()
+                heartCrate.position = CGPoint(x: nextEncounterSpawnPosition - 600, y: 270)
             }
         }
     }
@@ -205,6 +217,10 @@ extension GameScene {
                 star.collect()
                 player.starPower()
                 print("Start powerup!")
+            }
+        case PhysicsCategory.crate.rawValue:
+            if let crate = otherBody.node as? Crate {
+                crate.explode(gameScene: self)
             }
         default:
             print("Contact with no game logic")

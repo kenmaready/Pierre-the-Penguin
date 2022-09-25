@@ -10,14 +10,17 @@ import SpriteKit
 enum EmitterType {
     case crate
     case heart
+    case coinFountain
 }
 
 class ParticlePool {
     
     var cratePool: [SKEmitterNode] = []
     var heartPool: [SKEmitterNode] = []
+    var coinFountainPool: [SKEmitterNode] = []
     var crateIndex = 0
     var heartIndex = 0
+    var coinFointainIndex = 0
     var gameScene = SKScene()
     
     init() {
@@ -36,6 +39,14 @@ class ParticlePool {
             heart.name = "heart" + String(i)
             heartPool.append(heart)
         }
+        
+        for i in 1...10 {
+            let coinFountain = SKEmitterNode(fileNamed: "CoinFountain")!
+            coinFountain.position = CGPoint(x: -2000, y: -2000)
+            coinFountain.zPosition = CGFloat(45 - i)
+            coinFountain.name = "coinFountain" + String(i)
+            coinFountainPool.append(coinFountain)
+        }
     }
     
     func addEmittersToScene(scene: GameScene) {
@@ -47,6 +58,10 @@ class ParticlePool {
         
         for i in 0..<heartPool.count {
             self.gameScene.addChild(heartPool[i])
+        }
+        
+        for i in 0..<coinFountainPool.count {
+            self.gameScene.addChild(coinFountainPool[i])
         }
     }
     
@@ -62,6 +77,10 @@ class ParticlePool {
             emitter = heartPool[heartIndex]
             heartIndex += 1
             if heartIndex >= heartPool.count { heartIndex = 0 }
+        case EmitterType.coinFountain:
+            emitter = coinFountainPool[coinFointainIndex]
+            coinFointainIndex += 1
+            if coinFointainIndex >= coinFountainPool.count { coinFointainIndex = 0 }
         default:
             return
         }

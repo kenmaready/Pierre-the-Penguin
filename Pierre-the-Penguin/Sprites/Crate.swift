@@ -10,6 +10,7 @@ import SpriteKit
 class Crate: SKSpriteNode, GameSprite {
     var textureAtlas: SKTextureAtlas = SKTextureAtlas(named: "Environment")
     var initialSize: CGSize = CGSize(width: 40, height: 40)
+    let coinSound = SKAction.playSoundFileNamed("Coin.aif", waitForCompletion: false)
     var givesHeart = false
     var exploded = false
     
@@ -30,9 +31,27 @@ class Crate: SKSpriteNode, GameSprite {
         givesHeart = true
     }
     
-    func explode() {
+    func explode(gameScene: GameScene) {
         if exploded { return }
         exploded = true
+        
+        gameScene.particlePool.placeEmitter(node: self, type: EmitterType.crate)
+        self.run(SKAction.fadeAlpha(to: 0.0, duration: 0.1))
+        
+        if (givesHeart) {
+            let newHealth = gameScene.player.health + 1
+            let maxHealth = gameScene.player.maxHealth
+            gameScene.player.health = newHealth > maxHealth ? maxHealth : newHealth
+            gameScene.hud.setHealthDisplay(newHealth: gameScene.player.health)
+            gameScene.particlePool.placeEmitter(node: self, type: EmitterType.heart)
+        } else {
+            gameScene.coinsCollected += 5
+            gameScene.hud.setCoinDisplay(newCoinCount: gameScene.coinsCollected)
+            gameScene.particlePool.placeEmitter(node: self, type: EmitterType.coinFountain)
+            for _ in 1...5 {
+                self.run(coinSound)
+            }
+        }
         
         self.physicsBody?.categoryBitMask = 0
     }
