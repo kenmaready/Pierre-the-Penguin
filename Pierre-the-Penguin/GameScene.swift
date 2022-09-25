@@ -13,6 +13,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private var backgrounds: [Background] = []
     private let ground = Ground()
     private let player = Player()
+    private let particlePool = ParticlePool()
     private let hud = HUD()
     private let gameStartSound = SKAction.playSoundFileNamed("StartGame", waitForCompletion: false)
     
@@ -56,6 +57,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         self.addChild(powerUpStar)
         powerUpStar.position = CGPoint(x: -2000, y: -2000)
+        particlePool.addEmittersToScene(scene: self)
         
         self.run(gameStartSound)
     }

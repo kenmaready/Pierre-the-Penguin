@@ -34,6 +34,9 @@
 		9BA3C06228E0757500835E01 /* BackgroundMusic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3C06128E0757500835E01 /* BackgroundMusic.swift */; };
 		9BA3C06428E0790900835E01 /* OptionsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3C06328E0790900835E01 /* OptionsScene.swift */; };
 		9BA3C06628E0861A00835E01 /* Crate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3C06528E0861A00835E01 /* Crate.swift */; };
+		9BA3C06828E0885000835E01 /* HeartExplosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9BA3C06728E0885000835E01 /* HeartExplosion.sks */; };
+		9BA3C06A28E0895800835E01 /* CrateExplosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9BA3C06928E0895800835E01 /* CrateExplosion.sks */; };
+		9BA3C06C28E08ADE00835E01 /* ParticlePool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3C06B28E08ADE00835E01 /* ParticlePool.swift */; };
 		9BB9605928DCF35C00D38DBE /* EncounterB.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9BB9605828DCF35C00D38DBE /* EncounterB.sks */; };
 		9BB9605B28DCF43300D38DBE /* EncounterC.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9BB9605A28DCF43300D38DBE /* EncounterC.sks */; };
 		9BB9605D28DE121100D38DBE /* PhysicsMasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB9605C28DE121100D38DBE /* PhysicsMasks.swift */; };
@@ -73,6 +76,9 @@
 		9BA3C06128E0757500835E01 /* BackgroundMusic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundMusic.swift; sourceTree = "<group>"; };
 		9BA3C06328E0790900835E01 /* OptionsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsScene.swift; sourceTree = "<group>"; };
 		9BA3C06528E0861A00835E01 /* Crate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crate.swift; sourceTree = "<group>"; };
+		9BA3C06728E0885000835E01 /* HeartExplosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HeartExplosion.sks; sourceTree = "<group>"; };
+		9BA3C06928E0895800835E01 /* CrateExplosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CrateExplosion.sks; sourceTree = "<group>"; };
+		9BA3C06B28E08ADE00835E01 /* ParticlePool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticlePool.swift; sourceTree = "<group>"; };
 		9BB9605828DCF35C00D38DBE /* EncounterB.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterB.sks; sourceTree = "<group>"; };
 		9BB9605A28DCF43300D38DBE /* EncounterC.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterC.sks; sourceTree = "<group>"; };
 		9BB9605C28DE121100D38DBE /* PhysicsMasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsMasks.swift; sourceTree = "<group>"; };
@@ -114,7 +120,9 @@
 			isa = PBXGroup;
 			children = (
 				9B07E53328D75EB800C90C61 /* Actions.sks */,
+				9BA3C06928E0895800835E01 /* CrateExplosion.sks */,
 				9B07E53128D75EB800C90C61 /* GameScene.sks */,
+				9BA3C06728E0885000835E01 /* HeartExplosion.sks */,
 				9BB9606A28DF4B3D00D38DBE /* PierrePath.sks */,
 				9B07E52F28D75EB800C90C61 /* AppDelegate.swift */,
 				9BB9606828DF407700D38DBE /* Background.swift */,
@@ -132,6 +140,7 @@
 				9B07E53928D75EB800C90C61 /* Main.storyboard */,
 				9BA3C05628DFBF8B00835E01 /* Sound */,
 				9B391FDD28DC9263006FD8E5 /* Sprites */,
+				9BA3C06B28E08ADE00835E01 /* ParticlePool.swift */,
 			);
 			path = "Pierre-the-Penguin";
 			sourceTree = "<group>";
@@ -236,10 +245,12 @@
 			files = (
 				9BA3C05D28DFC6EF00835E01 /* Coin.aif in Resources */,
 				9BA3C05E28DFC6EF00835E01 /* Hurt.aif in Resources */,
+				9BA3C06A28E0895800835E01 /* CrateExplosion.sks in Resources */,
 				9BA3C05F28DFC6EF00835E01 /* Powerup.aif in Resources */,
 				9BA3C06028DFC6EF00835E01 /* StartGame.aif in Resources */,
 				9BA3C05C28DFC66800835E01 /* BackgroundMusic.m4a in Resources */,
 				9B07E53B28D75EB800C90C61 /* Main.storyboard in Resources */,
+				9BA3C06828E0885000835E01 /* HeartExplosion.sks in Resources */,
 				9BB9605B28DCF43300D38DBE /* EncounterC.sks in Resources */,
 				9B07E53228D75EB800C90C61 /* GameScene.sks in Resources */,
 				9BB9605F28DE35DC00D38DBE /* Dies.mp3 in Resources */,
@@ -270,6 +281,7 @@
 				9BA3C06428E0790900835E01 /* OptionsScene.swift in Sources */,
 				9BB9606728DF383600D38DBE /* HUD.swift in Sources */,
 				9B07E54828DB346700C90C61 /* GameSprite.swift in Sources */,
+				9BA3C06C28E08ADE00835E01 /* ParticlePool.swift in Sources */,
 				9BB9605D28DE121100D38DBE /* PhysicsMasks.swift in Sources */,
 				9B07E53628D75EB800C90C61 /* GameScene.swift in Sources */,
 				9BA3C06228E0757500835E01 /* BackgroundMusic.swift in Sources */,
