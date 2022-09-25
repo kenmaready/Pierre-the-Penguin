@@ -16,7 +16,10 @@ class Player: SKSpriteNode, GameSprite {
     let maxFlappingForce: CGFloat = 32000
     var forwardVelocity: CGFloat = 4000
     let maxHeight: CGFloat = 1000
-    let deathSound = SKAudioNode(fileNamed: "pierre-dies.mp3")
+    let powerUpSound = SKAction.playSoundFileNamed("Powerup.aif", waitForCompletion: false)
+    let hurtSound = SKAction.playSoundFileNamed("Hurt.aif", waitForCompletion: false)
+    let deathSound = SKAction.playSoundFileNamed("pierre-dies.mp3", waitForCompletion: false)
+//    let deathSound = SKAudioNode(fileNamed: "pierre-dies.mp3")
     
     var health: Int = 3
     var invulnerable = false
@@ -180,11 +183,8 @@ class Player: SKSpriteNode, GameSprite {
     func die() {
         self.alpha = 1
         self.removeAllActions()
-        deathSound.autoplayLooped = false
-        self.addChild(deathSound)
-        deathSound.run(SKAction.changeVolume(to: Float(4), duration: 0))
-        deathSound.run(SKAction.play())
         self.run(self.dieAnimation)
+        self.run(deathSound)
         self.flapping = false
         
         if let gameScene = self.parent as? GameScene {
@@ -201,6 +201,7 @@ class Player: SKSpriteNode, GameSprite {
         if self.health <= 0 {
             die()
         } else {
+            self.run(hurtSound)
             self.run(self.damageAnimation)
         }
     }
@@ -229,6 +230,7 @@ class Player: SKSpriteNode, GameSprite {
         ])
         
         let starGroup = SKAction.group([
+            powerUpSound,
             starSequence,
             SKAction.repeat(playerPulse, count: 37)
         ])

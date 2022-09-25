@@ -32,6 +32,7 @@
 		9BA3C05E28DFC6EF00835E01 /* Hurt.aif in Resources */ = {isa = PBXBuildFile; fileRef = 9BA3C05928DFBFC700835E01 /* Hurt.aif */; };
 		9BA3C05F28DFC6EF00835E01 /* Powerup.aif in Resources */ = {isa = PBXBuildFile; fileRef = 9BA3C05A28DFBFD400835E01 /* Powerup.aif */; };
 		9BA3C06028DFC6EF00835E01 /* StartGame.aif in Resources */ = {isa = PBXBuildFile; fileRef = 9BA3C05B28DFBFE600835E01 /* StartGame.aif */; };
+		9BA3C06228E0757500835E01 /* BackgroundMusic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3C06128E0757500835E01 /* BackgroundMusic.swift */; };
 		9BB9605928DCF35C00D38DBE /* EncounterB.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9BB9605828DCF35C00D38DBE /* EncounterB.sks */; };
 		9BB9605B28DCF43300D38DBE /* EncounterC.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9BB9605A28DCF43300D38DBE /* EncounterC.sks */; };
 		9BB9605D28DE121100D38DBE /* PhysicsMasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB9605C28DE121100D38DBE /* PhysicsMasks.swift */; };
@@ -71,6 +72,7 @@
 		9BA3C05928DFBFC700835E01 /* Hurt.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hurt.aif; sourceTree = "<group>"; };
 		9BA3C05A28DFBFD400835E01 /* Powerup.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Powerup.aif; sourceTree = "<group>"; };
 		9BA3C05B28DFBFE600835E01 /* StartGame.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = StartGame.aif; sourceTree = "<group>"; };
+		9BA3C06128E0757500835E01 /* BackgroundMusic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundMusic.swift; sourceTree = "<group>"; };
 		9BB9605828DCF35C00D38DBE /* EncounterB.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterB.sks; sourceTree = "<group>"; };
 		9BB9605A28DCF43300D38DBE /* EncounterC.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterC.sks; sourceTree = "<group>"; };
 		9BB9605C28DE121100D38DBE /* PhysicsMasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsMasks.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				9B07E53E28D75EBB00C90C61 /* LaunchScreen.storyboard */,
 				9B07E53928D75EB800C90C61 /* Main.storyboard */,
 				9B391FDD28DC9263006FD8E5 /* Sprites */,
+				9BA3C06128E0757500835E01 /* BackgroundMusic.swift */,
 			);
 			path = "Pierre-the-Penguin";
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				9B07E54828DB346700C90C61 /* GameSprite.swift in Sources */,
 				9BB9605D28DE121100D38DBE /* PhysicsMasks.swift in Sources */,
 				9B07E53628D75EB800C90C61 /* GameScene.swift in Sources */,
+				9BA3C06228E0757500835E01 /* BackgroundMusic.swift in Sources */,
 				9B391FDC28DC9255006FD8E5 /* MadFly.swift in Sources */,
 				9B391FE328DCAB82006FD8E5 /* Coin.swift in Sources */,
 				9B07E54E28DB4AA600C90C61 /* Player.swift in Sources */,

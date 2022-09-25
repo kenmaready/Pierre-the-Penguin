@@ -14,6 +14,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private let ground = Ground()
     private let player = Player()
     private let hud = HUD()
+    private let gameStartSound = SKAction.playSoundFileNamed("StartGame", waitForCompletion: false)
     
     var screenCenterY: CGFloat = 0
     
@@ -47,20 +48,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addGround()
         self.addPlayer()
         self.physicsWorld.contactDelegate = self
-        
-        
-//        self.addChild(backgroundMusic)
-//        backgroundMusic.run(SKAction.stop())
-//        backgroundMusic.run(SKAction.changeVolume(to: Float(0.8), duration: 0))
             
         encounterManager.addEncountersToScene(gameScene: self)
         for encounter in encounterManager.encounters {
             encounter.position.x += 200
-            
         }
         
         self.addChild(powerUpStar)
         powerUpStar.position = CGPoint(x: -2000, y: -2000)
+        
+        self.run(gameStartSound)
     }
         
     override func update(_ currentTime: TimeInterval) {

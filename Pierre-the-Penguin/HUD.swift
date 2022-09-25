@@ -85,7 +85,7 @@ class HUD: SKNode {
         self.addChild(menuButton)
         
         let fadeAnimation = SKAction.sequence([
-            SKAction.wait(forDuration: 1),
+            SKAction.wait(forDuration: 1.8),
             SKAction.fadeAlpha(to: 1, duration: 0.4)
         ])
         restartButton.run(fadeAnimation)

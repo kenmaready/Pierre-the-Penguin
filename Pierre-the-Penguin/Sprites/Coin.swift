@@ -11,7 +11,7 @@ class Coin: SKSpriteNode, GameSprite {
     var textureAtlas: SKTextureAtlas = SKTextureAtlas(named: "Environment")
     var initialSize: CGSize = CGSize(width: 26, height: 26)
     var value = 1
-    let coinCollectionSound = SKAudioNode(fileNamed: "coin-collect.mp3")
+    let coinSound = SKAction.playSoundFileNamed("Coin.aif", waitForCompletion: false)
     
     init() {
         let bronzeTexture = textureAtlas.textureNamed("coin-bronze")
@@ -21,10 +21,6 @@ class Coin: SKSpriteNode, GameSprite {
         
         self.physicsBody?.categoryBitMask = PhysicsCategory.coin.rawValue
         self.physicsBody?.collisionBitMask = 0
-        
-        coinCollectionSound.autoplayLooped = false
-        self.addChild(coinCollectionSound)
-        coinCollectionSound.run(SKAction.changeVolume(to: Float(10), duration: 0))
     }
     
     required init?(coder: NSCoder) {
@@ -66,7 +62,7 @@ class Coin: SKSpriteNode, GameSprite {
             resetAfterCollected
         ])
         
-        coinCollectionSound.run(SKAction.play())
+        self.run(coinSound)
         self.run(collectSequence)
     }
     
