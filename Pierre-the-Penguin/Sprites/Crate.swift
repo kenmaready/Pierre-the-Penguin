@@ -48,9 +48,12 @@ class Crate: SKSpriteNode, GameSprite {
             gameScene.coinsCollected += 5
             gameScene.hud.setCoinDisplay(newCoinCount: gameScene.coinsCollected)
             gameScene.particlePool.placeEmitter(node: self, type: EmitterType.coinFountain)
-            for _ in 1...5 {
-                self.run(coinSound)
-            }
+            
+            let coinSoundSequence = SKAction.repeat(SKAction.sequence([
+                coinSound, SKAction.wait(forDuration: 0.05)
+            ]), count: 5)
+            self.run(coinSoundSequence
+            )
         }
         
         self.physicsBody?.categoryBitMask = 0
