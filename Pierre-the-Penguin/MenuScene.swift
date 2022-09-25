@@ -10,6 +10,7 @@ import SpriteKit
 class MenuScene: SKScene {
     let textureAtlas: SKTextureAtlas = SKTextureAtlas(named: "HUD")
     let startButton = SKSpriteNode()
+    let optionsButton = SKSpriteNode()
     
     override func didMove(to view: SKView) {
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -50,6 +51,12 @@ class MenuScene: SKScene {
             SKAction.fadeAlpha(to: 1, duration: 0.9)
         ])
         startText.run(SKAction.repeatForever(pulseAction))
+        
+        optionsButton.texture = textureAtlas.textureNamed("button-options")
+        optionsButton.name = "OptionsBtn"
+        optionsButton.position = CGPoint(x: 0, y: -120)
+        optionsButton.size = CGSize(width: 75, height: 75)
+        self.addChild(optionsButton)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -58,6 +65,8 @@ class MenuScene: SKScene {
             let nodeTouched = atPoint(location)
             if nodeTouched.name == "StartBtn" {
                 self.view?.presentScene(GameScene(size: self.size))
+            } else if nodeTouched.name == "OptionsBtn" {
+                self.view?.presentScene(OptionsScene(size: self.size))
             }
         }
     }

@@ -24,7 +24,6 @@
 		9B391FDF28DC9404006FD8E5 /* Bat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B391FDE28DC9404006FD8E5 /* Bat.swift */; };
 		9B391FE128DC9548006FD8E5 /* Blade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B391FE028DC9548006FD8E5 /* Blade.swift */; };
 		9B391FE328DCAB82006FD8E5 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B391FE228DCAB82006FD8E5 /* Coin.swift */; };
-		9B391FE528DCBC85006FD8E5 /* background-music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B391FE428DCBC85006FD8E5 /* background-music.mp3 */; };
 		9B391FE828DCD13C006FD8E5 /* EncounterA.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9B391FE728DCD13C006FD8E5 /* EncounterA.sks */; };
 		9BA3C05528DF8D1300835E01 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3C05428DF8D1300835E01 /* MenuScene.swift */; };
 		9BA3C05C28DFC66800835E01 /* BackgroundMusic.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9BA3C05728DFBF9E00835E01 /* BackgroundMusic.m4a */; };
@@ -33,12 +32,11 @@
 		9BA3C05F28DFC6EF00835E01 /* Powerup.aif in Resources */ = {isa = PBXBuildFile; fileRef = 9BA3C05A28DFBFD400835E01 /* Powerup.aif */; };
 		9BA3C06028DFC6EF00835E01 /* StartGame.aif in Resources */ = {isa = PBXBuildFile; fileRef = 9BA3C05B28DFBFE600835E01 /* StartGame.aif */; };
 		9BA3C06228E0757500835E01 /* BackgroundMusic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3C06128E0757500835E01 /* BackgroundMusic.swift */; };
+		9BA3C06428E0790900835E01 /* OptionsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3C06328E0790900835E01 /* OptionsScene.swift */; };
 		9BB9605928DCF35C00D38DBE /* EncounterB.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9BB9605828DCF35C00D38DBE /* EncounterB.sks */; };
 		9BB9605B28DCF43300D38DBE /* EncounterC.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9BB9605A28DCF43300D38DBE /* EncounterC.sks */; };
 		9BB9605D28DE121100D38DBE /* PhysicsMasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB9605C28DE121100D38DBE /* PhysicsMasks.swift */; };
-		9BB9605F28DE35DC00D38DBE /* pierre-dies.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9BB9605E28DE35DC00D38DBE /* pierre-dies.mp3 */; };
-		9BB9606128DE520400D38DBE /* coin-collect.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9BB9606028DE520400D38DBE /* coin-collect.mp3 */; };
-		9BB9606528DE602100D38DBE /* star-contact.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9BB9606428DE602100D38DBE /* star-contact.mp3 */; };
+		9BB9605F28DE35DC00D38DBE /* Dies.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9BB9605E28DE35DC00D38DBE /* Dies.mp3 */; };
 		9BB9606728DF383600D38DBE /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB9606628DF383600D38DBE /* HUD.swift */; };
 		9BB9606928DF407700D38DBE /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB9606828DF407700D38DBE /* Background.swift */; };
 		9BB9606B28DF4B3D00D38DBE /* PierrePath.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9BB9606A28DF4B3D00D38DBE /* PierrePath.sks */; };
@@ -64,7 +62,6 @@
 		9B391FDE28DC9404006FD8E5 /* Bat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bat.swift; sourceTree = "<group>"; };
 		9B391FE028DC9548006FD8E5 /* Blade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blade.swift; sourceTree = "<group>"; };
 		9B391FE228DCAB82006FD8E5 /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
-		9B391FE428DCBC85006FD8E5 /* background-music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "background-music.mp3"; sourceTree = "<group>"; };
 		9B391FE728DCD13C006FD8E5 /* EncounterA.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterA.sks; sourceTree = "<group>"; };
 		9BA3C05428DF8D1300835E01 /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		9BA3C05728DFBF9E00835E01 /* BackgroundMusic.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = BackgroundMusic.m4a; sourceTree = "<group>"; };
@@ -73,12 +70,11 @@
 		9BA3C05A28DFBFD400835E01 /* Powerup.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Powerup.aif; sourceTree = "<group>"; };
 		9BA3C05B28DFBFE600835E01 /* StartGame.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = StartGame.aif; sourceTree = "<group>"; };
 		9BA3C06128E0757500835E01 /* BackgroundMusic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundMusic.swift; sourceTree = "<group>"; };
+		9BA3C06328E0790900835E01 /* OptionsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsScene.swift; sourceTree = "<group>"; };
 		9BB9605828DCF35C00D38DBE /* EncounterB.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterB.sks; sourceTree = "<group>"; };
 		9BB9605A28DCF43300D38DBE /* EncounterC.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterC.sks; sourceTree = "<group>"; };
 		9BB9605C28DE121100D38DBE /* PhysicsMasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsMasks.swift; sourceTree = "<group>"; };
-		9BB9605E28DE35DC00D38DBE /* pierre-dies.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "pierre-dies.mp3"; sourceTree = "<group>"; };
-		9BB9606028DE520400D38DBE /* coin-collect.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "coin-collect.mp3"; sourceTree = "<group>"; };
-		9BB9606428DE602100D38DBE /* star-contact.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "star-contact.mp3"; sourceTree = "<group>"; };
+		9BB9605E28DE35DC00D38DBE /* Dies.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Dies.mp3; sourceTree = "<group>"; };
 		9BB9606628DF383600D38DBE /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		9BB9606828DF407700D38DBE /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		9BB9606A28DF4B3D00D38DBE /* PierrePath.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PierrePath.sks; sourceTree = "<group>"; };
@@ -115,28 +111,25 @@
 		9B07E52E28D75EB800C90C61 /* Pierre-the-Penguin */ = {
 			isa = PBXGroup;
 			children = (
-				9BA3C05628DFBF8B00835E01 /* Sound */,
-				9B391FE428DCBC85006FD8E5 /* background-music.mp3 */,
-				9BB9606028DE520400D38DBE /* coin-collect.mp3 */,
-				9BB9605E28DE35DC00D38DBE /* pierre-dies.mp3 */,
-				9BB9606428DE602100D38DBE /* star-contact.mp3 */,
 				9B07E53328D75EB800C90C61 /* Actions.sks */,
 				9B07E53128D75EB800C90C61 /* GameScene.sks */,
 				9BB9606A28DF4B3D00D38DBE /* PierrePath.sks */,
 				9B07E52F28D75EB800C90C61 /* AppDelegate.swift */,
 				9BB9606828DF407700D38DBE /* Background.swift */,
+				9BA3C06128E0757500835E01 /* BackgroundMusic.swift */,
 				9BD7455628DCE2D1004616A6 /* EncounterManager.swift */,
 				9B07E53528D75EB800C90C61 /* GameScene.swift */,
 				9B07E53728D75EB800C90C61 /* GameViewController.swift */,
 				9BB9606628DF383600D38DBE /* HUD.swift */,
 				9BA3C05428DF8D1300835E01 /* MenuScene.swift */,
+				9BA3C06328E0790900835E01 /* OptionsScene.swift */,
 				9BB9605C28DE121100D38DBE /* PhysicsMasks.swift */,
 				9B07E53C28D75EBB00C90C61 /* Assets.xcassets */,
 				9B391FE628DCD0EF006FD8E5 /* Encounters */,
 				9B07E53E28D75EBB00C90C61 /* LaunchScreen.storyboard */,
 				9B07E53928D75EB800C90C61 /* Main.storyboard */,
+				9BA3C05628DFBF8B00835E01 /* Sound */,
 				9B391FDD28DC9263006FD8E5 /* Sprites */,
-				9BA3C06128E0757500835E01 /* BackgroundMusic.swift */,
 			);
 			path = "Pierre-the-Penguin";
 			sourceTree = "<group>";
@@ -170,6 +163,7 @@
 		9BA3C05628DFBF8B00835E01 /* Sound */ = {
 			isa = PBXGroup;
 			children = (
+				9BB9605E28DE35DC00D38DBE /* Dies.mp3 */,
 				9BA3C05728DFBF9E00835E01 /* BackgroundMusic.m4a */,
 				9BA3C05828DFBFAF00835E01 /* Coin.aif */,
 				9BA3C05928DFBFC700835E01 /* Hurt.aif */,
@@ -242,18 +236,15 @@
 				9BA3C05F28DFC6EF00835E01 /* Powerup.aif in Resources */,
 				9BA3C06028DFC6EF00835E01 /* StartGame.aif in Resources */,
 				9BA3C05C28DFC66800835E01 /* BackgroundMusic.m4a in Resources */,
-				9BB9606528DE602100D38DBE /* star-contact.mp3 in Resources */,
-				9BB9606128DE520400D38DBE /* coin-collect.mp3 in Resources */,
 				9B07E53B28D75EB800C90C61 /* Main.storyboard in Resources */,
 				9BB9605B28DCF43300D38DBE /* EncounterC.sks in Resources */,
 				9B07E53228D75EB800C90C61 /* GameScene.sks in Resources */,
-				9BB9605F28DE35DC00D38DBE /* pierre-dies.mp3 in Resources */,
+				9BB9605F28DE35DC00D38DBE /* Dies.mp3 in Resources */,
 				9BB9605928DCF35C00D38DBE /* EncounterB.sks in Resources */,
 				9B07E53D28D75EBB00C90C61 /* Assets.xcassets in Resources */,
 				9B07E54028D75EBB00C90C61 /* LaunchScreen.storyboard in Resources */,
 				9BB9606B28DF4B3D00D38DBE /* PierrePath.sks in Resources */,
 				9B391FE828DCD13C006FD8E5 /* EncounterA.sks in Resources */,
-				9B391FE528DCBC85006FD8E5 /* background-music.mp3 in Resources */,
 				9B07E53428D75EB800C90C61 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +263,7 @@
 				9B391FE128DC9548006FD8E5 /* Blade.swift in Sources */,
 				9BB9606928DF407700D38DBE /* Background.swift in Sources */,
 				9B07E54A28DB355D00C90C61 /* Bee.swift in Sources */,
+				9BA3C06428E0790900835E01 /* OptionsScene.swift in Sources */,
 				9BB9606728DF383600D38DBE /* HUD.swift in Sources */,
 				9B07E54828DB346700C90C61 /* GameSprite.swift in Sources */,
 				9BB9605D28DE121100D38DBE /* PhysicsMasks.swift in Sources */,

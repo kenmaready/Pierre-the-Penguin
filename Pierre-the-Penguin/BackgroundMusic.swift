@@ -34,6 +34,11 @@ class BackgroundMusic: NSObject {
         musicPlayer.pause()
     }
     
+    func playMusic() {
+        UserDefaults.standard.set(false, forKey: "BackgroundMusicMuteState")
+        musicPlayer.play()
+    }
+    
     func isMuted() -> Bool {
         if UserDefaults.standard.bool(forKey: "BackgroundMusicMuteState") {
             return true
