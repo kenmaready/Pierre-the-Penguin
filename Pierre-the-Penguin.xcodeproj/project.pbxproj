@@ -33,6 +33,7 @@
 		9BA3C06028DFC6EF00835E01 /* StartGame.aif in Resources */ = {isa = PBXBuildFile; fileRef = 9BA3C05B28DFBFE600835E01 /* StartGame.aif */; };
 		9BA3C06228E0757500835E01 /* BackgroundMusic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3C06128E0757500835E01 /* BackgroundMusic.swift */; };
 		9BA3C06428E0790900835E01 /* OptionsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3C06328E0790900835E01 /* OptionsScene.swift */; };
+		9BA3C06628E0861A00835E01 /* Crate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3C06528E0861A00835E01 /* Crate.swift */; };
 		9BB9605928DCF35C00D38DBE /* EncounterB.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9BB9605828DCF35C00D38DBE /* EncounterB.sks */; };
 		9BB9605B28DCF43300D38DBE /* EncounterC.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9BB9605A28DCF43300D38DBE /* EncounterC.sks */; };
 		9BB9605D28DE121100D38DBE /* PhysicsMasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB9605C28DE121100D38DBE /* PhysicsMasks.swift */; };
@@ -71,6 +72,7 @@
 		9BA3C05B28DFBFE600835E01 /* StartGame.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = StartGame.aif; sourceTree = "<group>"; };
 		9BA3C06128E0757500835E01 /* BackgroundMusic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundMusic.swift; sourceTree = "<group>"; };
 		9BA3C06328E0790900835E01 /* OptionsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsScene.swift; sourceTree = "<group>"; };
+		9BA3C06528E0861A00835E01 /* Crate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crate.swift; sourceTree = "<group>"; };
 		9BB9605828DCF35C00D38DBE /* EncounterB.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterB.sks; sourceTree = "<group>"; };
 		9BB9605A28DCF43300D38DBE /* EncounterC.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterC.sks; sourceTree = "<group>"; };
 		9BB9605C28DE121100D38DBE /* PhysicsMasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsMasks.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				9B391FDB28DC9255006FD8E5 /* MadFly.swift */,
 				9B07E54D28DB4AA600C90C61 /* Player.swift */,
 				9B391FD928DC85CC006FD8E5 /* Star.swift */,
+				9BA3C06528E0861A00835E01 /* Crate.swift */,
 			);
 			path = Sprites;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BA3C05528DF8D1300835E01 /* MenuScene.swift in Sources */,
+				9BA3C06628E0861A00835E01 /* Crate.swift in Sources */,
 				9B391FDA28DC85CC006FD8E5 /* Star.swift in Sources */,
 				9BD7455728DCE2D1004616A6 /* EncounterManager.swift in Sources */,
 				9B07E54C28DB42BB00C90C61 /* Ground.swift in Sources */,

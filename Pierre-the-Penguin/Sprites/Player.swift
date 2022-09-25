@@ -18,8 +18,7 @@ class Player: SKSpriteNode, GameSprite {
     let maxHeight: CGFloat = 1000
     let powerUpSound = SKAction.playSoundFileNamed("Powerup.aif", waitForCompletion: false)
     let hurtSound = SKAction.playSoundFileNamed("Hurt.aif", waitForCompletion: false)
-    let deathSound = SKAction.playSoundFileNamed("pierre-dies.mp3", waitForCompletion: false)
-//    let deathSound = SKAudioNode(fileNamed: "pierre-dies.mp3")
+    let deathSound = SKAction.playSoundFileNamed("Dies.mp3", waitForCompletion: false)
     
     var health: Int = 3
     var invulnerable = false
@@ -40,7 +39,7 @@ class Player: SKSpriteNode, GameSprite {
         
         // assign the physics categories:
         self.physicsBody?.categoryBitMask = PhysicsCategory.penguin.rawValue
-        self.physicsBody?.contactTestBitMask = PhysicsCategory.enemy.rawValue | PhysicsCategory.ground.rawValue | PhysicsCategory.powerup.rawValue | PhysicsCategory.coin.rawValue
+        self.physicsBody?.contactTestBitMask = PhysicsCategory.enemy.rawValue | PhysicsCategory.ground.rawValue | PhysicsCategory.powerup.rawValue | PhysicsCategory.coin.rawValue | PhysicsCategory.crate.rawValue
         self.physicsBody?.collisionBitMask = PhysicsCategory.ground.rawValue 
 
         // temporary flight up at start
